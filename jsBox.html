@@ -1,0 +1,113 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JS Box</title>
+    <link rel="stylesheet" href="jsBoxStyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <h1>
+      <a href="experiments.html"><i class="fa fa-home"></i></a
+      ><a href="jsBox.html">JS Box</a>
+    </h1>
+    <div class="tv-box">
+      <div class="tv-screen">
+        <div class="backBtn" id="backBtn">Back</div>
+        <!------------------------COLOR MATCH GAME -->
+        <div class="screen menu" id="menuGrid">
+          <button class="menuGridItem" id="menuItem1">
+            Channel-1 <br />COLOR MATCH
+          </button>
+          <!---------------------PUZZLE SLIDER GAME -->
+          <button class="menuGridItem" id="menuItem2">
+            Channel-2 <br />PUZZLE SLIDER
+          </button>
+          <button class="menuGridItem" id="menuItem3">
+            Channel-3 <br />Tic Tac Toe
+          </button>
+          <button class="menuGridItem" id="menuItem4">Channel-4</button>
+          <button class="menuGridItem" id="menuItem5">Channel-5</button>
+          <button class="menuGridItem" id="menuItem6">Channel-6</button>
+        </div>
+
+        <!-- ColorMatch Game on channel 1 -->
+        <div class="screen channel " id="channel-1">
+          <div class="colorDivHeader">
+            <h4>Color Match!</h4>
+            <p>Click to match the colors.</p>
+          </div>
+          <div class="colorDivAnswer" id="colorDivAnswer">ANSWER</div>
+          <button class="colorDiv" id="colorDiv1"></button>
+          <button class="colorDiv" id="colorDiv2"></button>
+          <button class="colorDiv" id="colorDiv3"></button>
+        </div>
+        <!-- DnD puzzle slider game on channel-2 -->
+        <div class="screen channel" id="channel-2">
+          <img
+            class="puzzlePic"
+            id="dndPuzzlePic1"
+            src="dndPuzzlePic1.jpg"
+            alt="puzzlePic1"
+          />
+          <img
+            onclick="swap(this)"
+            class="puzzlePic"
+            id="dndPuzzlePic2"
+            src="dndPuzzlePic2.jpg"
+            alt="puzzlePic2"
+          />
+          <img
+            onclick="swap(this)"
+            class="puzzlePic"
+            id="dndPuzzlePic3"
+            src="dndPuzzlePic3.jpg"
+            alt="puzzlePic3"
+          />
+          <img
+            onclick="swap(this)"
+            class="puzzlePic"
+            id="dndPuzzlePic4"
+            src="dndPuzzlePic4.jpg"
+            alt="puzzlePic4"
+          />
+          <img
+            onclick="swap(this)"
+            class="puzzlePic"
+            id="dndPuzzlePic5"
+            src="dndPuzzlePic5.jpg"
+            alt="puzzlePic5"
+          />
+          <img
+            onclick="swap(this)"
+            class="puzzlePic"
+            id="dndPuzzlePic6"
+            src="dndPuzzlePic6.jpg"
+            alt="puzzlePic6"
+          />
+        </div>
+        <!-- TIC Tac TOE Game on channel-3 -->
+        <but class="screen channel" id="channel-3">
+          <button class="ticTacToeBox" id="ticTacToeBox1"onclick="ticTacToeChangeTile(this.id)"></button>
+          <button class="ticTacToeBox" id="ticTacToeBox2"onclick="ticTacToeChangeTile(this.id)"></button>
+          <button class="ticTacToeBox" id="ticTacToeBox3"onclick="ticTacToeChangeTile(this.id)"></button>
+          <button class="ticTacToeBox" id="ticTacToeBox4"onclick="ticTacToeChangeTile(this.id)"></button>
+          <button class="ticTacToeBox" id="ticTacToeBox5"onclick="ticTacToeChangeTile(this.id)"></button>
+          <button class="ticTacToeBox" id="ticTacToeBox6"onclick="ticTacToeChangeTile(this.id)"></button>
+          <button class="ticTacToeBox" id="ticTacToeBox7"onclick="ticTacToeChangeTile(this.id)"></button>
+          <button class="ticTacToeBox" id="ticTacToeBox8"onclick="ticTacToeChangeTile(this.id)"></button>
+          <button class="ticTacToeBox" id="ticTacToeBox9"onclick="ticTacToeChangeTile(this.id)"></button>
+        </div>
+        <div class="screen channel" id="channel-4"></div>
+        <div class="screen channel" id="channel-5"></div>
+        <div class="screen channel" id="channel-6"></div>
+      </div>
+    </div>
+
+    <script src="jsBoxScript.js"></script>
+  </body>
+</html>
