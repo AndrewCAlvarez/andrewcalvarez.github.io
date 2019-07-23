@@ -1,0 +1,141 @@
+/* COLOR PALETTE
+SKY #7CDBD5
+BRIGHT CORAL #F53240
+GOLDEN #F9BE02
+AQUAMARINE #02C8A7
+*/
+
+/* * {
+  border: 1px solid black;
+} */
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-rows: minmax(125px, auto);
+  background-color: #7cdbd5;
+  font-family: "Hind", sans-serif;
+}
+
+@media screen and (min-width: 40em) {
+  body {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 4% repeat(4, 55%) 5%;
+  }
+}
+
+nav {
+  grid-area: 1 / 1 / 2 / 13;
+  background-color: rgb(255, 255, 255);
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 3px 4px #0000008e;
+  margin-top: -3px;
+  margin: -3px -2px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  float: right;
+  padding: 5px 10px;
+  font-size: 1.25em;
+}
+
+nav a:hover {
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+#homeBtn {
+  float: left;
+}
+
+#aboutSection {
+  grid-area: 2 / 4 / 3 / 10;
+  text-align: center;
+  font-size: 2em;
+}
+
+#aboutSection img {
+  margin: 1% auto;
+  display: block;
+  border-radius: 100px;
+  width: 100%;
+  height: auto;
+}
+
+/************************************************* PROJECT SECTION */
+
+#projectsSection {
+  grid-area: 3 / 4 / 4 / 10;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 2fr 2fr 0.5fr;
+  text-align: center;
+}
+
+#projectsSection h2 {
+  grid-area: 1 / 1 / 2 / 4;
+}
+
+#projectItem1 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+#projectItem {
+  grid-area: ; ///;
+}
+#projectItem {
+  grid-area: ; ///;
+}
+#projectItem {
+  grid-area: ; ///;
+}
+#projectItem {
+  grid-area: ; ///;
+}
+#projectItem {
+  grid-area: ; ///;
+}
+
+.projectsNavBtn {
+  font-size: 2em;
+}
+
+/******************************************** TECHNOLOGIES */
+
+#technologiesSection {
+  grid-area: 4 / 4 / 5 / 10;
+  text-align: center;
+}
+
+/********************************************* CONTACT */
+
+#contactSection {
+  grid-area: 5 / 4 / 6 / 10;
+}
+
+footer {
+  grid-area: 6 / 1 / 7 / 13;
+  background-color: #f53240;
+  width: 100%;
+  margin-bottom: -3px;
+  text-align: center;
+}
+
+footer div {
+  display: inline-block;
+  background-color: rgb(95, 22, 129);
+  border-radius: 100px;
+  font-size: 2em;
+  width: 1em;
+  height: auto;
+  margin-top: 13px;
+}
+
+footer div a {
+  color: #f53240;
+  margin: auto auto;
+}

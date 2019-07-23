@@ -9,59 +9,94 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Hind&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav>
-      <a href="index.html"><img src="" alt="" />Home</a>
-      <a href="#">Projects</a>
-      <a href="#">Technologies</a>
+      <a id="homeBtn" href="index.html"> <i class="fa fa-home"></i> Home</a>
+
       <a href="#">Contact</a>
+      <a href="#">Projects</a><a href="#">Technologies</a>
     </nav>
     <section id="aboutSection">
-      <div id="portraitContainer"><img src="" alt="" />Portrait</div>
+      <div id="portraitContainer">
+        <img src="placeholderImage.jpg" alt="" />
+      </div>
       <p>Hi, I'm Andrew</p>
     </section>
     <section id="projectsSection">
       <h2>Projects</h2>
-      <a href="#"><img src="" alt="" />Project-1</a>
-      <a href="#"><img src="" alt="" />Project-2</a>
-      <a href="#"><img src="" alt="" />Project-3</a>
-      <a href="#"><img src="" alt="" />Project-4</a>
-      <a href="#"><img src="" alt="" />Project-5</a>
-      <a href="#"><img src="" alt="" />Project-6</a>
-      <div class="leftArrow"><i class="fa fa-arrow-left"></i></div>
-      <a href="https://github.com/AndrewCAlvarez/.github.io"
+      <a id="projectItem1" href="#"><img src="" alt="" />Project-1</a>
+      <a id="projectItem2" href="#"><img src="" alt="" />Project-2</a>
+      <a id="projectItem3" href="#"><img src="" alt="" />Project-3</a>
+      <a id="projectItem4" href="#"><img src="" alt="" />Project-4</a>
+      <a id="projectItem5" href="#"><img src="" alt="" />Project-5</a>
+      <a id="projectItem6" href="#"><img src="" alt="" />Project-6</a>
+      <div class="projectsNavBtn"><i class="fa fa-arrow-left"></i></div>
+      <a
+        class="projectsNavBtn"
+        href="https://github.com/AndrewCAlvarez/.github.io"
         ><i class="fa fa-github"></i
       ></a>
-      <div class="rightArrow"><i class="fa fa-arrow-right"></i></div>
+      <div class="projectsNavBtn"><i class="fa fa-arrow-right"></i></div>
     </section>
-    <section>
+    <section id="technologiesSection">
       <h2>Technologies</h2>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>Javascript</li>
-        <li>Github</li>
-        <li>Figma</li>
-      </ul>
+      <div>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Javascript</li>
+          <li>Github</li>
+          <li>Figma</li>
+        </ul>
+      </div>
     </section>
-    <section>
+    <section id="contactSection">
       <h2>Contact Me</h2>
-      <input type="text" />
-      <input type="text" />
-      <input type="text" />
-      <input type="submit" />
+      <form
+        name="myForm"
+        action="/action_page.php"
+        onsubmit="return validateForm()"
+        method="post"
+      >
+        Name: <input name="fname" type="text" /> Email:
+        <input type="text" name="femail" id="" /> Message:
+        <input type="text" name="fmessage" />
+        <input type="submit" value="Submit" />
+      </form>
     </section>
     <footer>
-      <a href="#"><i class="fa fa-github"></i></a>
-      <a href="#"><i class="fa fa-facebook"></i></a>
-      <a href="#"><i class="fa fa-twitter"></i></a>
-      <a href="#"><i class="fa fa-instagram"></i></a>
-      <a href="#"><i class="fa fa-linkedin"></i></a>
-      <a href="#"><i class="fa fa-instagram"></i></a>
-      <a href="#"><i class="fa fa-pinterest"></i></a>
-      <a href="#"><i class="fa fa-dribbble"></i></a>
-      <a href="#"><i class="fa fa-envelope"></i></a>
+      <div class="socialMediaBackground">
+        <a href="#"><i class="fa fa-github"></i></a>
+      </div>
+      <div class="socialMediaBackground">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+      </div>
+      <div class="socialMediaBackground">
+        <a href="#"><i class="fa fa-twitter"></i></a>
+      </div>
+      <div class="socialMediaBackground">
+        <a href="#"><i class="fa fa-instagram"></i></a>
+      </div>
+      <div class="socialMediaBackground">
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+      </div>
+
+      <div class="socialMediaBackground">
+        <a href="#"><i class="fa fa-pinterest"></i></a>
+      </div>
+      <div class="socialMediaBackground">
+        <a href="#"><i class="fa fa-dribbble"></i></a>
+      </div>
+      <div class="socialMediaBackground">
+        <a href="#"><i class="fa fa-envelope"></i></a>
+      </div>
     </footer>
+
+    <script src="index.js"></script>
   </body>
 </html>
