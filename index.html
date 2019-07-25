@@ -3,71 +3,77 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Andrew Alvarz</title>
+    <title>Andrew Alvarez</title>
     <link rel="stylesheet" href="indexStyle.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Hind&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet" />
   </head>
   <body>
     <nav>
       <a id="homeBtn" href="index.html"> <i class="fa fa-home"></i> Home</a>
 
-      <a href="#">Contact</a>
-      <a href="#">Projects</a><a href="#">Technologies</a>
+      <a class="collapsableNav" href="#">Contact</a>
+      <a class="collapsableNav" href="#">Projects</a>
+      <a class="collapsableNav" href="#">Technologies</a>
+      <span></span>
     </nav>
     <section id="aboutSection">
+      <h2>Frontend Web Developer</h2>
       <div id="portraitContainer">
         <img src="placeholderImage.jpg" alt="" />
       </div>
       <p>Hi, I'm Andrew</p>
     </section>
     <section id="projectsSection">
-      <h2>Projects</h2>
-      <a id="projectItem1" href="#"><img src="" alt="" />Project-1</a>
-      <a id="projectItem2" href="#"><img src="" alt="" />Project-2</a>
-      <a id="projectItem3" href="#"><img src="" alt="" />Project-3</a>
-      <a id="projectItem4" href="#"><img src="" alt="" />Project-4</a>
-      <a id="projectItem5" href="#"><img src="" alt="" />Project-5</a>
-      <a id="projectItem6" href="#"><img src="" alt="" />Project-6</a>
-      <div class="projectsNavBtn"><i class="fa fa-arrow-left"></i></div>
-      <a
-        class="projectsNavBtn"
-        href="https://github.com/AndrewCAlvarez/.github.io"
-        ><i class="fa fa-github"></i
-      ></a>
-      <div class="projectsNavBtn"><i class="fa fa-arrow-right"></i></div>
+      <div class="projectBorderBox">
+        <h2>Developments</h2>
+        <div>
+          <a class="projectItem" id="projectItem1" href="#"><img src="" alt="" />Project-1</a>
+        </div>
+        <div>
+          <a class="projectItem" id="projectItem2" href="#"><img src="" alt="" />Project-2</a>
+        </div>
+        <div>
+          <a class="projectItem" id="projectItem3" href="#"><img src="" alt="" />Project-3</a>
+        </div>
+        <div>
+          <a class="projectItem" id="projectItem4" href="#"><img src="" alt="" />Project-4</a>
+        </div>
+        <div>
+          <a class="projectItem" id="projectItem5" href="#"><img src="" alt="" />Project-5</a>
+        </div>
+        <div>
+          <a class="projectItem" id="projectItem6" href="#"><img src="" alt="" />Project-6</a>
+        </div>
+
+        <a class="projectsNavBtn" href="https://github.com/AndrewCAlvarez/.github.io"><i class="fa fa-github"></i></a>
+      </div>
     </section>
     <section id="technologiesSection">
       <h2>Technologies</h2>
-      <div>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>Javascript</li>
-          <li>Github</li>
-          <li>Figma</li>
-        </ul>
-      </div>
+      <!-- Id like to add some icons to this list -->
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Javascript</li>
+        <li>Github</li>
+        <li>Figma</li>
+      </ul>
     </section>
     <section id="contactSection">
-      <h2>Contact Me</h2>
-      <form
-        name="myForm"
-        action="/action_page.php"
-        onsubmit="return validateForm()"
-        method="post"
-      >
-        Name: <input name="fname" type="text" /> Email:
-        <input type="text" name="femail" id="" /> Message:
-        <input type="text" name="fmessage" />
-        <input type="submit" value="Submit" />
-      </form>
+      <div class="projectBorderBox">
+        <h2>Contact Me</h2>
+        <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
+          <div class="nameEmailContainer">
+            <input name="fname" type="text" value="Name" id="fname" />
+            <input type="text" name="femail" value="Email" id="femail" />
+          </div>
+          <div class="messageContainer">
+            <input type="text" name="fmessage" value="Message..." id="fmessage" />
+            <input type="submit" value="Send" id="fsubmit" />
+          </div>
+        </form>
+      </div>
     </section>
     <footer>
       <div class="socialMediaBackground">
