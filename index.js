@@ -93,18 +93,24 @@ hamburgerMenu2.onclick = function() {
 
 //Projects tab functionality
 
-function openTab(e) {
+function openTab(tab) {
   var projectsTabs = document.getElementsByClassName("projectsTab");
   var projectsContent = document.getElementsByClassName("projectsContent");
-  var curTab;
+  var curContent;
 
   for (i = 0; i < projectsTabs.length; i++) {
     projectsTabs[i].style.backgroundColor = "white";
     projectsTabs[i].style.color = "black";
-  }
 
-  e.style.color = "white";
-  e.style.backgroundColor = "8045cf";
+    projectsContent[i].style.display = "none";
+
+    if (projectsTabs[i].id == tab.id) {
+      curContent = projectsContent[i];
+    }
+  }
+  curContent.style.display = "block";
+  tab.style.color = "white";
+  tab.style.backgroundColor = "8045cf";
 }
 
 document.addEventListener("click", function(event) {

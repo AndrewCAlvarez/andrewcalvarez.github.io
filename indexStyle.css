@@ -147,20 +147,32 @@ nav,
   /* border-left: 2px solid #8045cf; */
   border-right: 2px solid #8045cf;
   border-radius: 5px 5px 0px 0px;
-  padding: 0px 4px;
-  margin-right: -6px;
-  margin-left: 3px;
+  margin-right: -4px;
+  width: 23%;
+  text-align: center;
 }
 
-#projectsTab1 {
+#featuredTab {
   color: white;
   background-color: #8145cf;
+}
+
+#featuredContent {
+  display: block;
 }
 
 .projectsContent {
   border: 2px solid #8145cf8e;
   width: 99%;
   border-radius: 5px;
+  display: none;
+}
+
+#projectsSection a {
+  display: block;
+  width: 100%;
+  color: #8045cf;
+  text-align: center;
 }
 
 /******************************************** TECHNOLOGIES */
@@ -177,7 +189,12 @@ nav,
 }
 
 #technologiesSection ul {
+  width: 20%;
   color: white;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+  margin-left: 3px;
 }
 
 /********************************************* CONTACT */
