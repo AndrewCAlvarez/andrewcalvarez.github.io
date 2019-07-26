@@ -42,7 +42,7 @@ var firstPass = false;
 document.body.onscroll = function() {
   var curScrollPos = document.body.scrollTop;
   console.log(curScrollPos);
-  if (curScrollPos < lastScrollPosition) {
+  if (curScrollPos < lastScrollPosition && curScrollPos != 0) {
     navBar2.style.display = "block";
     navBar2.style.zIndex = 1;
     navBar2.style.top = "0";
@@ -54,7 +54,7 @@ document.body.onscroll = function() {
       firstPass = false;
     }
   } else {
-    navBar2.style.top = "-50px";
+    navBar2.style.top = "-100px";
     lastScrollPosition = curScrollPos;
     navBar2.style.display = "block";
   }
