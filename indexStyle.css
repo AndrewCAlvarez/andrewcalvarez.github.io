@@ -39,11 +39,12 @@ nav {
   z-index: -1;
 }
 
-nav a {
+nav a,
+nav button {
   text-decoration: none;
   color: black;
   float: right;
-  padding: 5% 10px;
+  padding: 5% 5px;
   font-size: 1.25em;
 }
 
@@ -53,12 +54,28 @@ nav a:hover {
   border-radius: 5px;
 }
 
+nav button {
+  border: none;
+  background-color: white;
+}
+
+nav button:hover {
+  cursor: pointer;
+}
+
 #homeBtn {
   float: left;
+  display: inline-block;
 }
 
 .collapsablenav {
-  display: none;
+  display: inline-block;
+}
+
+#navBar2 {
+  z-index: 1;
+  top: -50px;
+  transition: top 0.5s;
 }
 
 /******************* ABOUT SECTION */
@@ -67,7 +84,7 @@ nav a:hover {
   grid-area: 1 / 4 / 2 / 10;
   text-align: center;
   background-color: #8045cf;
-  margin: 13% auto 0 auto;
+  margin: 14% auto 0 auto;
   border-radius: 25% 25% 0% 0%;
   color: white;
 }
@@ -95,7 +112,6 @@ nav a:hover {
   grid-area: 2 / 4 / 3 / 10;
   display: block;
   background-color: #8045cf;
-  z-index: 1;
 }
 
 #projectsSection h2 {

@@ -9,12 +9,29 @@
     <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <nav>
-      <a id="homeBtn" href="index.html"> <i class="fa fa-home"></i> Home</a>
-
+    <nav id="navBar">
+      <a id="homeBtn" href="index.html"> <i class="fa fa-home"></i></a>
+      <button id="hamburgerMenu">
+        <i class="fa fa-bars"></i>
+      </button>
       <a class="collapsableNav" href="#">Contact</a>
-      <a class="collapsableNav" href="#">Projects</a>
       <a class="collapsableNav" href="#">Technologies</a>
+      <a class="collapsableNav" href="#">Projects</a>
+
+      <span></span>
+    </nav>
+    <!-- THIS SECOND NAV BAR WAS CREATED TO ALLOW CONTENT TO FLOW OVER INITIAL NAVBAR
+    THEN HAVE IT RETURN OVER CONTENT WITHOUT NEEDING TO PAUSE ALL FUNCTIONS WITH A SLEEP
+  FUNCTION -->
+    <nav id="navBar2">
+      <a id="homeBtn" href="index.html"> <i class="fa fa-home"></i></a>
+      <button id="hamburgerMenu">
+        <i class="fa fa-bars"></i>
+      </button>
+      <a class="collapsableNav" href="#">Contact</a>
+      <a class="collapsableNav" href="#">Technologies</a>
+      <a class="collapsableNav" href="#">Projects</a>
+
       <span></span>
     </nav>
     <section id="aboutSection">

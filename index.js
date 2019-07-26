@@ -31,3 +31,31 @@ var fmessage = document.getElementById("fmessage");
 fmessage.onclick = function() {
   fmessage.value = "";
 };
+
+var hamburgerMenu = document.getElementById("hamburgerMenu");
+var menuItems = document.getElementsByClassName("collapsableNav");
+var navBar = document.getElementById("navBar");
+var navBar2 = document.getElementById("navBar2");
+var lastScrollPosition = 0;
+var firstPass = false;
+
+document.body.onscroll = function() {
+  var curScrollPos = document.body.scrollTop;
+  console.log(curScrollPos);
+  if (curScrollPos < lastScrollPosition) {
+    navBar2.style.zIndex = 1;
+    navBar2.style.top = "0";
+    lastScrollPosition = curScrollPos;
+    if (curScrollPos == 0 && firstPass) {
+      navBar2.style.zIndex = -2;
+      navBar2.style.top = "-50px";
+      firstPass = false;
+    }
+  } else {
+    navBar2.style.top = "-50px";
+    lastScrollPosition = curScrollPos;
+  }
+  if (curScrollPos > 100) {
+    firstPass = true;
+  }
+};
