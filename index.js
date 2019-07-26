@@ -32,17 +32,20 @@ fmessage.onclick = function() {
   fmessage.value = "";
 };
 
-var hamburgerMenu = document.getElementById("hamburgerMenu");
-var menuItems = document.getElementsByClassName("collapsableNav");
+//Functionality for sliding content over navbar and then having nav bar drop down
 var navBar = document.getElementById("navBar");
 var navBar2 = document.getElementById("navBar2");
 var lastScrollPosition = 0;
 var firstPass = false;
 
+//firstPass is used to determine if the user has scrolled past the navbar. if true,
+//then the second nav bar used as a drop down when a user scrolls up will move behind
+//the first, allowing the user to scroll content over the nav bar again
+//NOTE: CURRENTLY shows both bars on actual mobile devices when scrolling up to top quickly,
+//and when user pulls content down the second bar is shown hiding above the first
 document.body.onscroll = function() {
   var curScrollPos = document.body.scrollTop;
-  console.log(curScrollPos);
-  if (curScrollPos < lastScrollPosition && curScrollPos != 0) {
+  if (curScrollPos < lastScrollPosition) {
     navBar2.style.display = "block";
     navBar2.style.zIndex = 1;
     navBar2.style.top = "0";
@@ -53,7 +56,7 @@ document.body.onscroll = function() {
       navBar2.style.top = "-50px";
       firstPass = false;
     }
-  } else {
+  } else if (curScrollPos > lastScrollPosition && curScrollPos != 0) {
     navBar2.style.top = "-100px";
     lastScrollPosition = curScrollPos;
     navBar2.style.display = "block";
@@ -62,3 +65,50 @@ document.body.onscroll = function() {
     firstPass = true;
   }
 };
+
+//hamburger menu functionality. Onclick display = block or none;
+//NOTE: move out of way if user scrolls without need to click
+var hamburgerMenu1 = document.getElementById("hamburgerMenu1");
+var hamburgerMenu2 = document.getElementById("hamburgerMenu2");
+var subMenu = document.getElementById("subMenu");
+var subMenuDisplayed = false;
+hamburgerMenu1.onclick = function() {
+  if (!subMenuDisplayed) {
+    subMenu.style.display = "block";
+    subMenuDisplayed = true;
+  } else {
+    subMenu.style.display = "none";
+    subMenuDisplayed = false;
+  }
+};
+hamburgerMenu2.onclick = function() {
+  if (!subMenuDisplayed) {
+    subMenu.style.display = "block";
+    subMenuDisplayed = true;
+  } else {
+    subMenu.style.display = "none";
+    subMenuDisplayed = false;
+  }
+};
+
+//Projects tab functionality
+
+function openTab(e) {
+  var projectsTabs = document.getElementsByClassName("projectsTab");
+  var projectsContent = document.getElementsByClassName("projectsContent");
+  var curTab;
+
+  for (i = 0; i < projectsTabs.length; i++) {
+    projectsTabs[i].style.backgroundColor = "white";
+    projectsTabs[i].style.color = "black";
+  }
+
+  e.style.color = "white";
+  e.style.backgroundColor = "8045cf";
+}
+
+document.addEventListener("click", function(event) {
+  if (event.target.classList.contains("projectsTab")) {
+    openTab(event.target);
+  }
+});

@@ -9,31 +9,29 @@
     <link href="https://fonts.googleapis.com/css?family=Hind&display=swap" rel="stylesheet" />
   </head>
   <body>
+    <!----------------------------------------NAVIGATION------------- -->
     <nav id="navBar">
       <a id="homeBtn" href="index.html"> <i class="fa fa-home"></i></a>
-      <button id="hamburgerMenu">
+      <button id="hamburgerMenu1" class="hamburgerMenu">
         <i class="fa fa-bars"></i>
       </button>
-      <a class="collapsableNav" href="#">Contact</a>
-      <a class="collapsableNav" href="#">Technologies</a>
-      <a class="collapsableNav" href="#">Projects</a>
-
-      <span></span>
     </nav>
     <!-- THIS SECOND NAV BAR WAS CREATED TO ALLOW CONTENT TO FLOW OVER INITIAL NAVBAR
     THEN HAVE IT RETURN OVER CONTENT WITHOUT NEEDING TO PAUSE ALL FUNCTIONS WITH A SLEEP
   FUNCTION -->
     <nav id="navBar2">
       <a id="homeBtn" href="index.html"> <i class="fa fa-home"></i></a>
-      <button id="hamburgerMenu">
+      <button id="hamburgerMenu2" class="hamburgerMenu">
         <i class="fa fa-bars"></i>
       </button>
-      <a class="collapsableNav" href="#">Contact</a>
-      <a class="collapsableNav" href="#">Technologies</a>
-      <a class="collapsableNav" href="#">Projects</a>
-
-      <span></span>
     </nav>
+    <div class="subMenu" id="subMenu">
+      <a class="subMenuItem" href="#">Contact</a>
+      <a class="subMenuItem" href="#">Technologies</a>
+      <a class="subMenuItem" href="#">Projects</a>
+    </div>
+
+    <!---------------------------------------------ABOUT SECTION -->
     <section id="aboutSection">
       <h2>Frontend Web Developer</h2>
       <div id="portraitContainer">
@@ -41,31 +39,25 @@
       </div>
       <p>Hi, I'm Andrew</p>
     </section>
+    <!-----------------------------------------------PROJECTS / DEVELOPMENTS -->
     <section id="projectsSection">
       <div class="projectBorderBox">
         <h2>Developments</h2>
-        <div>
-          <a class="projectItem" id="projectItem1" href="#"><img src="" alt="" />Project-1</a>
-        </div>
-        <div>
-          <a class="projectItem" id="projectItem2" href="#"><img src="" alt="" />Project-2</a>
-        </div>
-        <div>
-          <a class="projectItem" id="projectItem3" href="#"><img src="" alt="" />Project-3</a>
-        </div>
-        <div>
-          <a class="projectItem" id="projectItem4" href="#"><img src="" alt="" />Project-4</a>
-        </div>
-        <div>
-          <a class="projectItem" id="projectItem5" href="#"><img src="" alt="" />Project-5</a>
-        </div>
-        <div>
-          <a class="projectItem" id="projectItem6" href="#"><img src="" alt="" />Project-6</a>
-        </div>
 
-        <a class="projectsNavBtn" href="https://github.com/AndrewCAlvarez/.github.io"><i class="fa fa-github"></i></a>
+        <div class="projectsTab" id="projectsTab1">Featured</div>
+        <div class="projectsTab" id="projectsTab2">Websites</div>
+        <div class="projectsTab" id="projectsTab3">Games</div>
+        <div class="projectsTab" id="projectsTab4">Functional</div>
+
+        <div class="projectsContent" id="projectsContent1">some stuff1</div>
+        <div class="projectsContent" id="projectsContent2">some stuff2</div>
+        <div class="projectsContent" id="projectsContent3">some stuff3</div>
+        <div class="projectsContent" id="projectsContent4">some stuff4</div>
+
+        <a class="projectsGithubBtn" href="https://github.com/AndrewCAlvarez"><i class="fa fa-github"></i></a>
       </div>
     </section>
+    <!------------------------------------------------TECHNOLOGIES SECTION -->
     <section id="technologiesSection">
       <h2>Technologies</h2>
       <!-- Id like to add some icons to this list -->
@@ -77,6 +69,7 @@
         <li>Figma</li>
       </ul>
     </section>
+    <!------------------------------------------------CONTACT SECTION -->
     <section id="contactSection">
       <div class="projectBorderBox">
         <h2>Contact Me</h2>
@@ -92,6 +85,7 @@
         </form>
       </div>
     </section>
+    <!------------------------------------------------------FOOTER -->
     <footer>
       <div class="socialMediaBackground">
         <a href="#"><i class="fa fa-github"></i></a>
