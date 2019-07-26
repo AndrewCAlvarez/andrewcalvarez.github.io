@@ -152,6 +152,10 @@ nav,
   text-align: center;
 }
 
+.projectsTab:hover {
+  cursor: pointer;
+}
+
 #featuredTab {
   color: white;
   background-color: #8145cf;
@@ -170,9 +174,14 @@ nav,
 
 #projectsSection a {
   display: block;
-  width: 100%;
+  width: 20%;
+  margin: auto;
   color: #8045cf;
   text-align: center;
+}
+
+#projectsSection i {
+  font-size: 1.75em;
 }
 
 /******************************************** TECHNOLOGIES */
