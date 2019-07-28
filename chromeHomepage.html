@@ -3,13 +3,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="chromeHomepage.css" />
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand&display=swap" rel="stylesheet" />
     <title>Welcome</title>
   </head>
   <body>
-    <a href="https://www.youtube.com/"><img src="youtubeIcon.jpg" alt=""/></a>
-    <a href="https://developer.mozilla.org/en-US/"><img src="mdn_webdocs.jpg" alt=""/></a>
-    <form>
-      <input type="text" />
+    <h1 class="flex-header-container">Welcome, Andrew</h1>
+    <main id="flex-icon-container" class="flex-icon-container">
+      <a class="icon" href="https://www.youtube.com/"><img src="youtubeIcon.jpg" alt=""/></a>
+      <a class="icon" href="https://developer.mozilla.org/en-US/"><img src="mdn_webdocs.jpg" alt=""/></a>
+      <a class="icon" href="https://thingiverse.com"><img src="thingiverseIcon.jpg" alt=""/></a>
+    </main>
+
+    <form
+      id="searchBar"
+      action="https://www.google.com/search"
+      class="searchform flex-search-container"
+      method="get"
+      name="searchform"
+      target="_blank"
+    >
+      <input autocomplete="on" class="form-control search" name="q" placeholder="Search" required="required" type="text" />
+      <button class="button" type="submit">Search</button>
     </form>
   </body>
 

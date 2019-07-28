@@ -1,3 +1,6 @@
-var searchBar = document.getElementsByTagName("input");
+var flexBtn = document.getElementById("flexBtn");
 
-searchBar[0].value = "Something";
+flexBtn.onclick = function() {
+  var flexContainer = document.getElementById("flex-container");
+  flexContainer.style.flexDirection = "column";
+};
