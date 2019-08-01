@@ -1,5 +1,7 @@
 solveEuler1();
 solveEuler2();
+solveEuler3();
+solveEuler4();
 
 function solveEuler1() {
   var sumList = [];
@@ -43,4 +45,36 @@ function solveEuler2() {
   }
 
   answer2.innerHTML = sum;
+}
+
+function solveEuler3() {
+  num = 600851475143;
+
+  for (i = 0; i < num; i++) {
+    if (num % i == 0) {
+      num = num / i;
+    }
+    if (num > num / i) {
+    }
+  }
+  var solution = document.getElementById("answer3");
+  solution.innerHTML = num;
+}
+
+function solveEuler4() {
+  var pop = 0;
+
+  function isPalindrome(a) {
+    var arr1 = a.toString();
+    arr1.reverse();
+    console.log(arr1);
+  }
+  isPalindrome(9449);
+
+  for (i = 100; i < 1000; i++) {
+    for (j = 100; j < 1000; j++) {
+      pop = j * i;
+    }
+  }
+  console.log(pop);
 }
