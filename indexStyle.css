@@ -2,15 +2,6 @@
 purple #8045cf
 */
 
-body {
-  margin: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: minmax(200px, auto);
-  background-color: white;
-  font-family: "Hind", sans-serif;
-}
-
 @media only screen and (min-width: 40em) {
   body {
     grid-template-columns: repeat(12, 1fr);

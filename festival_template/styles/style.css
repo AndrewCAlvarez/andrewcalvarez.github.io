@@ -1,0 +1,102 @@
+body {
+  display: -ms-grid;
+  display: grid;
+  grid-auto-rows: minmax(2000px, auto);
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#52002f), color-stop(#34011e), color-stop(#3f0024), color-stop(#7c0046), to(#a90060));
+  background-image: linear-gradient(#52002f, #34011e, #3f0024, #7c0046, #a90060);
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1/1/2/2;
+  color: white;
+}
+
+main .main-content {
+  margin-bottom: 3%;
+  width: 87%;
+  border: 2px solid #d36000;
+  text-align: center;
+  background-color: #a90060;
+}
+
+main img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.tickets-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 1 / 3 / 2;
+  color: white;
+  text-align: center;
+}
+
+.tickets-section .ticket-option {
+  background-color: #7c0046;
+  margin-bottom: 3%;
+  width: 87%;
+}
+
+.tickets-section .ticket-option h2 {
+  border-top: 1.5px solid #3f0024;
+}
+
+.tickets-section .buy-button {
+  background-color: #d36000;
+  margin-bottom: 3%;
+  width: 87%;
+  height: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+/*# sourceMappingURL=style.css.map */
