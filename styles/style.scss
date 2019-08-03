@@ -1,50 +1,36 @@
-$purpleMain: $purpleMain;
+// As hex codes */
+
+$color-primary-0: #ffaa54; // Main Primary color */
+$color-primary-1: #ffe2c4;
+$color-primary-2: #ffc182;
+$color-primary-3: #ff9427;
+$color-primary-4: #ff8100;
+
+$color-secondary-1-0: #ffcc54; // Main Secondary color (1) */
+$color-secondary-1-1: #ffedc4;
+$color-secondary-1-2: #ffd982;
+$color-secondary-1-3: #ffbe27;
+$color-secondary-1-4: #ffb300;
+
+$color-secondary-2-0: #ff6854; // Main Secondary color (2) */
+$color-secondary-2-1: #ffcbc4;
+$color-secondary-2-2: #ff9082;
+$color-secondary-2-3: #ff4027;
+$color-secondary-2-4: #ff1e00;
+
+$purpleMain: #8045cf;
 
 body {
   margin: 0;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: minmax(200px, auto);
+  grid-auto-rows: minmax(125px, auto);
   background-color: white;
   font-family: "Hind", sans-serif;
 }
 
 @media only screen and (min-width: 40em) {
   body {
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(5, 55%);
-  }
-
-  #hamburgerMenu1 {
-    display: none;
-  }
-
-  #subMenu {
-    position: fixed;
-    display: inline-block;
-    width: 50%;
-    height: 6%;
-    top: -240;
-    left: 1200;
-    border: none;
-  }
-
-  #aboutSection {
-    grid-area: 1 / 4 / 2 / 10;
-    text-align: center;
-    background-color: $purpleMain;
-    margin-top: 14%;
-    border-radius: 25% 25% 0% 0%;
-    color: white;
-  }
-
-  #aboutSection img {
-    margin: 2% auto;
-    display: block;
-    border-radius: 500px;
-    width: 65%;
-    height: auto;
-    border: 2px solid #ffffff;
+    grid-template-rows: 40em;
   }
 }
 
@@ -61,6 +47,23 @@ nav,
   text-align: center;
 }
 
+.subMenu {
+  margin-top: 13%;
+  z-index: 1;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.363);
+  border-bottom: 1px solid #8045cf;
+  display: none;
+}
+
+.subMenuItem {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  padding: 15px;
+  font-size: 1.2em;
+}
+
 #hamburgerMenu1 {
   border: none;
   float: right;
@@ -68,10 +71,9 @@ nav,
   width: 20%;
   height: 100%;
   font-size: 1.5em;
-}
-
-#hamburgerMenu1 i:hover {
-  cursor: pointer;
+  i:hover {
+    cursor: pointer;
+  }
 }
 
 #homeBtn {
@@ -84,29 +86,12 @@ nav,
   color: black;
 }
 
-.subMenu {
-  margin-top: 13%;
-  z-index: 1;
-  text-align: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.363);
-  border-bottom: 1px solid $purpleMain;
-  display: none;
-}
-
-.subMenuItem {
-  display: inline-block;
-  text-decoration: none;
-  color: black;
-  padding: 15px;
-  font-size: 1.2em;
-}
-
 /******************* ABOUT SECTION */
 
 #aboutSection {
   grid-area: 1 / 4 / 2 / 10;
   text-align: center;
-  background-color: $purpleMain;
+  background-color: #8045cf;
   margin-top: 14%;
   border-radius: 25% 25% 0% 0%;
   color: white;
@@ -119,196 +104,4 @@ nav,
   width: 65%;
   height: auto;
   border: 2px solid #ffffff;
-}
-
-/* #portraitContainer {
-    background-color: #21ebdd;
-    width: 65%;
-    height: 100%;
-    border-radius: 5px;
-    margin: 0 auto;
-  } */
-
-/************************************************* PROJECT SECTION */
-
-#projectsSection {
-  grid-area: 2 / 4 / 3 / 10;
-  display: block;
-  background-color: $purpleMain;
-}
-
-#projectsSection h2 {
-  grid-area: 1 / 1 / 2 / 4;
-  text-align: center;
-}
-
-.projectBorderBox {
-  background-color: rgb(255, 255, 255);
-  margin: 0 20px;
-  border-radius: 5px;
-  box-shadow: 0px 1px 5px rgb(202, 200, 200);
-}
-
-.projectsGithubBtn {
-  font-size: 2em;
-  display: block;
-}
-
-.projectsTab {
-  display: inline-block;
-  border-top: 2px solid $purpleMain;
-  border-bottom: none;
-  border-left: none;
-  border-right: 2px solid $purpleMain;
-  border-radius: 5px 5px 0px 0px;
-  font-size: 1em;
-  margin-right: -4px;
-  width: 23%;
-  text-align: center;
-  color: black;
-  background-color: white;
-  font-family: "Hind", sans-serif;
-}
-
-.projectsTab:hover {
-  cursor: pointer;
-}
-
-#featuredTab {
-  color: white;
-  background-color: #8145cf;
-}
-
-#featuredContent {
-  display: block;
-}
-
-.projectsContent {
-  border: 2px solid #8145cf8e;
-  width: 99%;
-  border-radius: 5px;
-  display: none;
-}
-
-#projectsSection a {
-  display: block;
-  width: 20%;
-  margin: auto;
-  color: $purpleMain;
-  text-align: center;
-}
-
-#projectsSection i {
-  font-size: 1.75em;
-}
-
-/******************************************** TECHNOLOGIES */
-
-#technologiesSection {
-  grid-area: 3 / 4 / 4 / 10;
-  background-color: $purpleMain;
-  padding-bottom: 1%;
-}
-
-#technologiesSection h2 {
-  text-align: center;
-  color: white;
-}
-
-#technologiesSection ul {
-  width: 20%;
-  color: white;
-  display: inline-block;
-  text-align: center;
-  margin: auto;
-  margin-left: 3px;
-}
-
-/********************************************* CONTACT */
-
-#contactSection {
-  grid-area: 4 / 4 / 5 / 10;
-  background-color: $purpleMain;
-}
-
-#contactSection h2 {
-  text-align: center;
-}
-
-#fname,
-#femail {
-  height: 30px;
-  border: 2px solid #8145cfa2;
-  border-radius: 5px;
-  color: gray;
-  width: 48%;
-}
-
-#femail {
-  float: right;
-}
-
-#fmessage {
-  width: 100%;
-  height: 100px;
-  margin: 3px auto;
-  border: 2px solid #8145cfa2;
-  border-radius: 5px;
-  color: gray;
-}
-
-#fsubmit {
-  width: 100%;
-  height: 35px;
-  font-size: 1.25em;
-  background-color: #fff;
-  border: 2px solid $purpleMaina2;
-  border-radius: 5px;
-}
-
-.nameEmailContainer {
-  width: 90%;
-
-  margin: 0 auto;
-}
-
-.messageContainer {
-  width: 90%;
-  margin: 0 auto;
-  padding-bottom: 10px;
-}
-
-/********************************************* FOOTER */
-
-footer {
-  grid-area: 5 / 1 / 6 / 13;
-  background-color: $purpleMain;
-  width: 100%;
-  margin-bottom: -3px;
-  text-align: center;
-}
-
-footer div {
-  display: inline-block;
-  background-color: white;
-  border-radius: 100px;
-  font-size: 2em;
-  width: 1em;
-  height: auto;
-  margin-top: 13px;
-}
-
-footer div:hover {
-  background-color: #f53240;
-  color: darkmagenta;
-}
-
-footer div a {
-  color: $purpleMain;
-  margin: auto auto;
-  text-decoration: none;
-}
-
-footer div a:hover {
-  color: darkmagenta;
 }
