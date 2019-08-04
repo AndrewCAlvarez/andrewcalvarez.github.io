@@ -21,16 +21,15 @@ $color-secondary-2-4: #a90060;
 @mixin flex-center {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 body {
   display: grid;
-  grid-auto-rows: minmax(2000px, auto);
+  grid-auto-rows: minmax(126px, auto);
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+  font-size: 1vh;
   background-image: linear-gradient(
     $color-secondary-2-0,
     $color-secondary-2-1,
@@ -38,13 +37,20 @@ body {
     $color-secondary-2-3,
     $color-secondary-2-4
   );
+  font-family: "Merriweather", serif;
 }
 
 main {
-  @include flex-center();
+  border: 5px solid greenyellow;
+  display: flex;
   grid-area: 1/1/2/2;
   color: white;
-text-decoration: none;
+  text-decoration: none;
+
+  .logo {
+    width: 87%;
+    margin-top: 3%;
+  }
 
   .main-content {
     margin-bottom: 3%;
@@ -55,10 +61,9 @@ text-decoration: none;
     text-decoration: none;
   }
 
-a {
-  
-  color: white;
-}
+  a {
+    color: white;
+  }
 
   img {
     width: 100%;
@@ -81,21 +86,56 @@ a {
     h2 {
       border-top: 1.5px solid $color-secondary-2-2;
     }
-
-
   }
 
   .vip-ticket-optoin {
     ul {
-      border-top: border-top: 1.5px solid $color-secondary-2-2;
+      border-top: 1.5px solid $color-secondary-2-2;
     }
   }
 
-  .buy-button {
+  .buy-button,
+  .all-ticket-options-button {
     background-color: $color-secondary-1-4;
+    border: 3px solid $color-primary-0;
     margin-bottom: 3%;
     width: 87%;
     height: 5vh;
     @include flex-center();
+  }
+}
+
+.social-media-section {
+  grid-area: 3 / 1 / 4 / 2;
+  @include flex-center();
+}
+
+footer {
+  @include flex-center();
+  grid-area: 4/ 1 / 5 / 2;
+  color: white;
+  text-align: center;
+
+  form {
+    display: block;
+  }
+
+  .logo {
+    width: 55%;
+  }
+  .social-media-container {
+  }
+  .fab {
+    text-align: center;
+    background-color: $color-secondary-1-4;
+    width: 30px;
+    padding: 20px;
+    font-size: 2em;
+    color: white;
+    border-radius: 50%;
+  }
+  .fab:hover {
+    background-color: $color-secondary-2-3;
+    color: ;
   }
 }

@@ -1,13 +1,14 @@
 body {
   display: -ms-grid;
   display: grid;
-  grid-auto-rows: minmax(2000px, auto);
+  grid-auto-rows: minmax(126px, auto);
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#52002f), color-stop(#34011e), color-stop(#3f0024), color-stop(#7c0046), to(#a90060));
   background-image: linear-gradient(#52002f, #34011e, #3f0024, #7c0046, #a90060);
+  font-family: "Merriweather", serif;
 }
 
 main {
@@ -30,6 +31,25 @@ main {
   -ms-grid-column-span: 1;
   grid-area: 1/1/2/2;
   color: white;
+  text-decoration: none;
+}
+
+main .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 87%;
+  margin-top: 3%;
 }
 
 main .main-content {
@@ -38,6 +58,11 @@ main .main-content {
   border: 2px solid #d36000;
   text-align: center;
   background-color: #a90060;
+  text-decoration: none;
+}
+
+main a {
+  color: white;
 }
 
 main img {
@@ -80,8 +105,14 @@ main img {
   border-top: 1.5px solid #3f0024;
 }
 
-.tickets-section .buy-button {
+.tickets-section .vip-ticket-optoin ul {
+  border-top: 1.5px solid #3f0024;
+}
+
+.tickets-section .buy-button,
+.tickets-section .all-ticket-options-button {
   background-color: #d36000;
+  border: 3px solid #670000;
   margin-bottom: 3%;
   width: 87%;
   height: 5vh;
@@ -98,5 +129,71 @@ main img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.social-media-section {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 3 / 1 / 4 / 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 4/ 1 / 5 / 2;
+  color: white;
+}
+
+footer tac .signup {
+  background-color: white;
+}
+
+footer .logo {
+  width: 55%;
+}
+
+footer .fab {
+  text-align: center;
+  background-color: #d36000;
+  width: 30px;
+  padding: 20px;
+  font-size: 2em;
+  color: white;
+  border-radius: 50%;
+}
+
+footer .fab:hover {
+  background-color: #7c0046;
+  color: #d36000;
 }
 /*# sourceMappingURL=style.css.map */
