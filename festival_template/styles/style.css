@@ -6,9 +6,37 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
+  font-size: 1vh;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#52002f), color-stop(#34011e), color-stop(#3f0024), color-stop(#7c0046), to(#a90060));
   background-image: linear-gradient(#52002f, #34011e, #3f0024, #7c0046, #a90060);
   font-family: "Merriweather", serif;
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+  color: white;
+  background-color: #a90060;
+  height: 5%;
+  font-size: 2em;
+  z-index: 1;
+}
+
+nav #nav-icon {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  margin: 50px auto;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+nav img {
+  width: 25px;
+  height: 25px;
 }
 
 main {
@@ -32,22 +60,10 @@ main {
   grid-area: 1/1/2/2;
   color: white;
   text-decoration: none;
+  text-align: center;
 }
 
 main .logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   width: 87%;
   margin-top: 3%;
 }
@@ -172,10 +188,11 @@ footer {
   -ms-grid-column-span: 1;
   grid-area: 4/ 1 / 5 / 2;
   color: white;
+  text-align: center;
 }
 
-footer tac .signup {
-  background-color: white;
+footer form {
+  display: block;
 }
 
 footer .logo {
@@ -194,6 +211,5 @@ footer .fab {
 
 footer .fab:hover {
   background-color: #7c0046;
-  color: #d36000;
 }
 /*# sourceMappingURL=style.css.map */

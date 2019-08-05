@@ -21,6 +21,8 @@ $color-secondary-2-4: #a90060;
 @mixin flex-center {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -40,12 +42,43 @@ body {
   font-family: "Merriweather", serif;
 }
 
+nav {
+  position: fixed;
+  width: 100%;
+  color: white;
+  background-color: $color-secondary-2-4;
+  height: 5%;
+  font-size: 2em;
+  z-index: 1;
+
+  #nav-icon {
+    width: 60px;
+    height: 45px;
+    position: relative;
+    margin: 50px auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+  }
+
+  img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
 main {
-  border: 5px solid greenyellow;
-  display: flex;
+  @include flex-center();
   grid-area: 1/1/2/2;
   color: white;
   text-decoration: none;
+  text-align: center;
 
   .logo {
     width: 87%;
@@ -123,8 +156,6 @@ footer {
   .logo {
     width: 55%;
   }
-  .social-media-container {
-  }
   .fab {
     text-align: center;
     background-color: $color-secondary-1-4;
@@ -136,6 +167,5 @@ footer {
   }
   .fab:hover {
     background-color: $color-secondary-2-3;
-    color: ;
   }
 }
