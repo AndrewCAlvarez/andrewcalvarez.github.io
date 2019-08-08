@@ -1,11 +1,16 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   display: -ms-grid;
   display: grid;
   grid-auto-rows: minmax(126px, auto);
-  margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 0;
   font-size: 1vh;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#52002f), color-stop(#34011e), color-stop(#3f0024), color-stop(#7c0046), to(#a90060));
   background-image: linear-gradient(#52002f, #34011e, #3f0024, #7c0046, #a90060);
@@ -13,30 +18,106 @@ body {
 }
 
 nav {
+  margin: 0;
+  padding: 0;
   position: fixed;
   width: 100%;
-  color: white;
-  background-color: #a90060;
-  height: 5%;
-  font-size: 2em;
+  height: 5vh;
   z-index: 1;
+  background-color: #a90060;
 }
 
-nav #nav-icon {
-  width: 60px;
-  height: 45px;
-  position: relative;
-  margin: 50px auto;
-  -webkit-transform: rotate(0deg);
-  transform: rotate(0deg);
-  -webkit-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+nav .toggler {
+  position: absolute;
+  height: 100%;
+  width: 10%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  opacity: 0;
   cursor: pointer;
 }
 
-nav img {
+nav .toggler:checked + .hamburger > div {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+nav .toggler:checked + .hamburger > div::before,
+nav .toggler:checked + .hamburger > div::after {
+  top: 0;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+nav .toggler:checked ~ .menu {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+nav .hamburger {
   width: 25px;
-  height: 25px;
+  padding: 1vh;
+  z-index: 2;
+}
+
+nav .hamburger div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  top: 1vh;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+nav .hamburger div::before,
+nav .hamburger div::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: inherit;
+  top: -5px;
+}
+
+nav .hamburger div::after {
+  top: 5px;
+}
+
+nav .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  line-height: 3rem;
+  background-color: #34011e94;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+nav .menu div ul li {
+  color: white;
+  list-style: none;
+  text-align: center;
+}
+
+nav .menu div a {
+  color: white;
+  text-decoration: none;
 }
 
 main {
@@ -61,11 +142,13 @@ main {
   color: white;
   text-decoration: none;
   text-align: center;
+  width: 100%;
+  height: 100%;
 }
 
 main .logo {
   width: 87%;
-  margin-top: 3%;
+  margin-top: 10%;
 }
 
 main .main-content {
@@ -96,6 +179,8 @@ main img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -121,8 +206,9 @@ main img {
   border-top: 1.5px solid #3f0024;
 }
 
-.tickets-section .vip-ticket-optoin ul {
+.tickets-section .vip-ticket-option ul {
   border-top: 1.5px solid #3f0024;
+  list-style: none;
 }
 
 .tickets-section .buy-button,
@@ -139,6 +225,8 @@ main img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -160,6 +248,8 @@ main img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -176,6 +266,8 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;

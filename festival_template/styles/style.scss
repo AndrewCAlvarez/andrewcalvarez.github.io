@@ -21,16 +21,23 @@ $color-secondary-2-4: #a90060;
 @mixin flex-center {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   display: grid;
   grid-auto-rows: minmax(126px, auto);
-  margin: 0;
+
   box-sizing: border-box;
-  padding: 0;
+
   font-size: 1vh;
   background-image: linear-gradient(
     $color-secondary-2-0,
@@ -43,46 +50,111 @@ body {
 }
 
 nav {
+  margin: 0;
+  padding: 0;
   position: fixed;
   width: 100%;
-  color: white;
-  background-color: $color-secondary-2-4;
-  height: 5%;
-  font-size: 2em;
+  height: 5vh;
   z-index: 1;
-
-  #nav-icon {
-    width: 60px;
-    height: 45px;
-    position: relative;
-    margin: 50px auto;
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    transform: rotate(0deg);
-    -webkit-transition: 0.5s ease-in-out;
-    -moz-transition: 0.5s ease-in-out;
-    -o-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
+  background-color: $color-secondary-2-4;
+  .toggler {
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    opacity: 0;
     cursor: pointer;
   }
+  //after toggle is checked, rotate
+  .toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+  }
+  //this creates the "x"
+  .toggler:checked + .hamburger > div::before,
+  .toggler:checked + .hamburger > div::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
 
-  img {
+  //this toggles the menu
+  .toggler:checked ~ .menu {
+    transform: scale(1);
+  }
+
+  //creates the bars for the hamburger menu
+  .hamburger {
     width: 25px;
-    height: 25px;
+    padding: 1vh;
+    z-index: 2;
+
+    div {
+      position: relative;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      top: 1vh;
+      transition: all 0.4s ease;
+    }
+    div::before,
+    div::after {
+      content: "";
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      background-color: inherit;
+      top: -5px;
+    }
+
+    div::after {
+      top: 5px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    line-height: 3rem;
+    background-color: #34011e94;
+    transform: scale(0);
+    transition: all 0.4s ease;
+    div {
+      ul li {
+        color: white;
+        list-style: none;
+        text-align: center;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
   }
 }
 
 main {
-  @include flex-center();
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   grid-area: 1/1/2/2;
   color: white;
   text-decoration: none;
   text-align: center;
+  width: 100%;
+  height: 100%;
 
   .logo {
     width: 87%;
-    margin-top: 3%;
+    margin-top: 10%;
   }
 
   .main-content {
@@ -121,9 +193,11 @@ main {
     }
   }
 
-  .vip-ticket-optoin {
+  .vip-ticket-option {
     ul {
       border-top: 1.5px solid $color-secondary-2-2;
+
+      list-style: none;
     }
   }
 
