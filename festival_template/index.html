@@ -46,62 +46,65 @@
       </div>
     </nav>
     <!-- ---------------------------------MAIN -->
-    <main>
+    <div class="logo">
+      <div><img src="./images/festival_logo.svg" alt="" /></div>
       <div>
-        <div class="logo">
-          <img src="./images/festival_logo.svg" alt="" />
-          <h2>10.24.2019-10.27.2019</h2>
-          <h2>Fairfield Parks</h2>
-          <h2>Anywhere, US</h2>
-        </div>
+        <h2>10.24.2019-10.27.2019</h2>
+        <h2>Fairfield Parks</h2>
+        <h2>Anywhere, US</h2>
+      </div>
+    </div>
+    <main>
+      <div class="main-content">
+        <img src="./images/artist.jpg" alt="" />
+        <a href="#">LINEUP</a>
       </div>
 
-      <div>
-        <div class="main-content"><img src="./images/artist.jpg" alt="" /></div>
-        <div class="main-content"><h2>LINEUP</h2></div>
+      <div class="main-content">
+        <img src="./images/audience.jpg" alt="" />
+        <a href="#">CAMPING INFO</a>
       </div>
-      <div>
-        <div class="main-content">
-          <img src="./images/audience.jpg" alt="" />
-        </div>
-        <div class="main-content"><h2>CAMPING INFO</h2></div>
-      </div>
-      <div>
-        <div class="main-content">
-          <img src="./images/hat_girl.jpg" alt="" />
-        </div>
-        <div class="main-content"><h2>TICKETS</h2></div>
+
+      <div class="main-content">
+        <img src="./images/hat_girl.jpg" alt="" />
+        <a href="#">TICKETS</a>
       </div>
     </main>
     <!-- --------------------------------------TICKETS -->
     <section class="tickets-section">
-      <h1>TICKETS</h1>
+      <div class="ticket-option">
+        <div>
+          <h1>3 DAY GA</h1>
+          <h3>Early Bird Now Available!</h3>
+          <h2>$200</h2>
+        </div>
+        <a href="#" class="buy-button">PURCHASE TICKETS</a>
+      </div>
 
       <div class="ticket-option">
-        <h1>3 DAY GA</h1>
-        <h3>Early Bird Now Available!</h3>
-        <h2>$200</h2>
+        <div>
+          <h1>4 DAY GA</h1>
+          <h3>Early Bird Now Available!</h3>
+          <h2>$240</h2>
+        </div>
+        <a href="#" class="buy-button">PURCHASE TICKETS</a>
       </div>
-      <div class="buy-button">PURCHASE TICKETS</div>
-      <div class="ticket-option">
-        <h1>4 DAY GA</h1>
-        <h3>Early Bird Now Available!</h3>
-        <h2>$240</h2>
-      </div>
-      <div class="buy-button">PURCHASE TICKETS</div>
 
       <div class="ticket-option vip-ticket-option">
-        <h1>VIP PASS</h1>
-        <h3>Early Bird Now Available!</h3>
-        <h2>$400</h2>
-        <ul>
-          <li>Meet the Artists</li>
-          <li>Early Entry</li>
-          <li>VIP Bathrooms & Showers</li>
-          <li><strong>CAR PARKING NOT INCLUDED</strong></li>
-        </ul>
+        <div>
+          <h1>VIP PASS</h1>
+          <h3>Early Bird Now Available!</h3>
+          <h2>$400</h2>
+          <ul>
+            <li>Meet the Artists</li>
+            <li>Early Entry</li>
+            <li>VIP Bathrooms & Showers</li>
+            <li><strong>CAR PARKING NOT INCLUDED</strong></li>
+          </ul>
+        </div>
+        <a href="#" class="buy-button">PURCHASE TICKETS</a>
       </div>
-      <div class="buy-button">PURCHASE TICKETS</div>
+
       <a href="#" class="all-ticket-options-button">VIEW ALL TICKETS</a>
     </section>
     <!-- --------------------------------------------SOCIAL MEDIA -->
@@ -282,15 +285,19 @@
     </section>
     <!-- ---------------------------------------------FOOTER -->
     <footer>
-      <h3>Signup to get the latest info!</h3>
-      <form action="https://formspree.io/alvaandrew2@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Name" />
-        <input type="email" name="_replyto" placeholder="Email" />
-        <input type="submit" value="Send" />
-        <input type="hidden" name="_next" value="index.html" />
-      </form>
-      <img class="logo" src="./images/festival_logo.svg" alt="" />
-      <h4><i class="far fa-copyright"></i>20XX Festive</h4>
+      <div>
+        <h3>Signup to get the latest info!</h3>
+        <form action="https://formspree.io/alvaandrew2@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Name" />
+          <input type="email" name="_replyto" placeholder="Email" />
+          <input type="submit" value="Send" />
+          <input type="hidden" name="_next" value="index.html" />
+        </form>
+      </div>
+      <div><img class="logo" src="./images/festival_logo.svg" alt="" /></div>
+      <div>
+        <h4><i class="far fa-copyright"></i>20XX Festive</h4>
+      </div>
       <div class="social-media-container">
         <a class="social-media-button" href="https://facebook.com"
           ><i class="fab fa-facebook-f"></i
@@ -305,10 +312,12 @@
         ></a>
       </div>
 
-      <p>info@festive.com</p>
-      <p>1.800.777.7777</p>
-      <p>Anywhere, USA</p>
-      <a href="#">PRIVACY POLICY</a>
+      <div>
+        <p>info@festive.com</p>
+        <p>1.800.777.7777</p>
+        <p>Anywhere, USA</p>
+        <a href="#">PRIVACY POLICY</a>
+      </div>
     </footer>
     <script src="./scripts/script.js"></script>
   </body>

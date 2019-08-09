@@ -20,9 +20,9 @@ $color-secondary-2-4: #a90060;
 
 @mixin flex-center {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -35,8 +35,6 @@ $color-secondary-2-4: #a90060;
 body {
   display: grid;
   grid-auto-rows: minmax(126px, auto);
-
-  box-sizing: border-box;
 
   font-size: 1vh;
   background-image: linear-gradient(
@@ -85,16 +83,17 @@ nav {
 
   //creates the bars for the hamburger menu
   .hamburger {
-    width: 25px;
-    padding: 1vh;
+    width: 5vh;
+    padding: 0px;
     z-index: 2;
 
     div {
       position: relative;
       width: 100%;
-      height: 2px;
+      height: 0.5vh;
       background-color: white;
-      top: 1vh;
+      top: 2.2vh;
+      left: 1vh;
       transition: all 0.4s ease;
     }
     div::before,
@@ -104,11 +103,11 @@ nav {
       width: inherit;
       height: inherit;
       background-color: inherit;
-      top: -5px;
+      top: -1vh;
     }
 
     div::after {
-      top: 5px;
+      top: 1vh;
     }
   }
 
@@ -140,26 +139,32 @@ nav {
   }
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.logo {
+  display: block;
+  margin: 6vh auto 10% auto;
   grid-area: 1/1/2/2;
   color: white;
-  text-decoration: none;
-  text-align: center;
-  width: 100%;
-  height: 100%;
 
-  .logo {
+  img {
     width: 87%;
-    margin-top: 10%;
+    max-width: 400px;
   }
+  div {
+    text-align: center;
+  }
+}
+
+main {
+  @include flex-center();
+
+  grid-area: 2/1/3/2;
+  color: white;
 
   .main-content {
-    margin-bottom: 3%;
     width: 87%;
+    margin-bottom: 3%;
+    max-width: 420px;
+    max-height: 300px;
     border: 2px solid $color-secondary-1-4;
     text-align: center;
     background-color: $color-secondary-2-4;
@@ -168,18 +173,22 @@ main {
 
   a {
     color: white;
+    text-decoration: none;
+    font-size: 1rem;
   }
 
   img {
     width: 100%;
+    max-height: 250px;
     height: auto;
     object-fit: cover;
+    border-bottom: 2px solid $color-secondary-1-4;
   }
 }
 
 .tickets-section {
   @include flex-center();
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: 3 / 1 / 4 / 2;
   color: white;
   text-align: center;
 
@@ -187,59 +196,105 @@ main {
     background-color: $color-secondary-2-3;
     margin-bottom: 3%;
     width: 87%;
-
-    h2 {
-      border-top: 1.5px solid $color-secondary-2-2;
+    max-width: 420px;
+    max-height: 320px;
+    text-align: center;
+    div {
+      @include flex-center();
+      flex-direction: column;
+      font-size: 1rem;
+      height: 20vh;
     }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
   }
 
   .vip-ticket-option {
     ul {
       border-top: 1.5px solid $color-secondary-2-2;
-
       list-style: none;
+      font-size: 0.5rem;
+      width: 100%;
     }
   }
 
-  .buy-button,
+  .buy-button {
+    background-color: $color-secondary-1-4;
+    border-top: 3px solid $color-primary-1;
+    width: 100%;
+    max-width: 420px;
+    height: 5vh;
+    @include flex-center();
+  }
   .all-ticket-options-button {
     background-color: $color-secondary-1-4;
-    border: 3px solid $color-primary-0;
     margin-bottom: 3%;
     width: 87%;
+    max-width: 700px;
     height: 5vh;
     @include flex-center();
   }
 }
 
 .social-media-section {
-  grid-area: 3 / 1 / 4 / 2;
-  @include flex-center();
+  grid-area: 4 / 1 / 5 / 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
 }
 
 footer {
-  @include flex-center();
-  grid-area: 4/ 1 / 5 / 2;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  grid-area: 6 / 1 / 7 / 2;
   color: white;
   text-align: center;
 
   form {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
   }
 
   .logo {
     width: 55%;
+    max-width: 200px;
   }
   .fab {
-    text-align: center;
     background-color: $color-secondary-1-4;
-    width: 30px;
-    padding: 20px;
-    font-size: 2em;
+    width: 5vh;
+    height: 5vh;
+    font-size: 2rem;
     color: white;
     border-radius: 50%;
+    @include flex-center();
   }
   .fab:hover {
     background-color: $color-secondary-2-3;
+  }
+
+  .social-media-container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    a {
+      text-decoration: none;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: white;
   }
 }
