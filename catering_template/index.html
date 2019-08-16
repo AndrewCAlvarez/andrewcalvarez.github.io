@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300&display=swap" rel="stylesheet">
+
     <title>Catering</title>
   </head>
   <body>
     <header>
       <nav>
-        <h4>Catering Co.</h4>
+        <h4><a href="#logo-section">Catering Co.</a></h4>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Menu</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#about-section">About</a></li>
+          <li><a href="#menu-section">Menu</a></li>
+          <li><a href="#contact-section">Contact</a></li>
         </ul>
       </nav>
     </header>
-    <section class="logo-section">
+    <section class="logo-section" id="logo-section"> 
       <h1>Catering Co.</h1>
       <img
         src="https://images.pexels.com/photos/587741/pexels-photo-587741.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         alt="pasteriesOnTable"
       />
     </section>
-    <section class="about-section">
-      <div><h1>About Catering Co.</h1>
+    <section class="about-section" id="about-section">
+      <div><h1>About Us</h1>
         <h3>Catering events since 1847</h3>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic laudantium
@@ -40,70 +42,70 @@
       /></div>
     </section>
     <div class="section-divider"></div>
-    <section class="menu-section">
-      <h1>Our Menu</h1>
-      <ul>
-        <li>
-          <h3>Bear Claw</h3>
-          <p>
-            A bear claw is a sweet, yeast-raised pastry, similar to a Danish,
-            originating in the United States during the mid-1920s.
-          </p>
-        </li>
-        <li>
-          <h3>Bichon au Citron</h3>
-          <p>
-            The bichon au citron is a French pastry. It is similar to a turnover
-            in size, shape, and that it is made of puff pastry. A major
-            distinguishing feature is that it is filled with lemon curd.
-          </p>
-        </li>
-        <li>
-          <h3>Chouquette</h3>
-          <p>
-            A chouquette is a type of Choux pastry consisting of a small portion
-            of dough sprinkled with pearl sugar.
-          </p>
-        </li>
-        <li>
-          <h3>Croissant</h3>
-          <p>
-            A croissant is a buttery, flaky, viennoiserie pastry of Austrian and
-            French origin, named for its historical crescent shape.
-          </p>
-        </li>
-        <li>
-          <h3>Eclair</h3>
-          <p>
-            An éclair is an oblong pastry made with choux dough filled with a
-            cream and topped with chocolate icing.
-          </p>
-        </li>
-      </ul>
-      <img
+    <section class="menu-section" id="menu-section">
+      <div><h1>Our Menu</h1>
+        <ul>
+          <li>
+            <h3>Bear Claw</h3>
+            <p>
+              A bear claw is a sweet, yeast-raised pastry, similar to a Danish,
+              originating in the United States during the mid-1920s.
+            </p>
+          </li>
+          <li>
+            <h3>Bichon au Citron</h3>
+            <p>
+              The bichon au citron is a French pastry. It is similar to a turnover
+              in size, shape, and that it is made of puff pastry. A major
+              distinguishing feature is that it is filled with lemon curd.
+            </p>
+          </li>
+          <li>
+            <h3>Chouquette</h3>
+            <p>
+              A chouquette is a type of Choux pastry consisting of a small portion
+              of dough sprinkled with pearl sugar.
+            </p>
+          </li>
+          <li>
+            <h3>Croissant</h3>
+            <p>
+              A croissant is a buttery, flaky, viennoiserie pastry of Austrian and
+              French origin, named for its historical crescent shape.
+            </p>
+          </li>
+          <li>
+            <h3>Eclair</h3>
+            <p>
+              An éclair is an oblong pastry made with choux dough filled with a
+              cream and topped with chocolate icing.
+            </p>
+          </li>
+        </ul></div>
+      <div><img
         src="https://images.pexels.com/photos/913136/pexels-photo-913136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
         alt=""
-      />
+      /></div>
     </section>
     <div class="section-divider"></div>
-    <section class="contact-section">
-      <h1>Contact</h1>
-      <p>
-        We offer full-service catering for all events. We can accodmodate events
-        large and small. Our goal is excellence, and we will not be beat! Please
-        do not hesitate to contact us.
-      </p>
-      <h3>Catering Co. 444 nw 82nd st, 32898 Louisville, KY</h3>
+    <section class="contact-section" id="contact-section">
+      <div><h1>Contact</h1>
+        <p>
+          We offer full-service catering for all events. We can accodmodate events
+          large and small. Our goal is excellence, and we will not be beat! Please
+          do not hesitate to contact us.
+        </p>
+        <h3>Catering Co. 444 nw 82nd st, 32898 Louisville, KY</h3></div>
       <form>
-        <input type="text" placeholder="Name" />
-        <input type="text" placeholder="Number of event attendees" />
-        <input type="text" placeholder="DATE" />
-        <input type="text" placeholder="Message/Additional Information" />
-        <button type="submit">SEND</button>
+        <div><input type="text" placeholder="Name" />
+          <input type="text" placeholder="Number of event attendees" />
+          <input type="text" placeholder="Date" />
+          <input type="text" placeholder="Message/Additional Information" />
+          <button type="submit">SEND</button></div>
       </form>
     </section>
     <footer>
-      <p>Copyright Catering Co.</p>
+      <h4>Copyright Catering Co.</h4>
     </footer>
   </body>
 </html>
