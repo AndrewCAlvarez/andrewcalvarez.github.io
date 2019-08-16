@@ -91,7 +91,7 @@ header nav ul a {
 }
 
 header nav ul a:hover {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.685);
   color: white;
 }
 
@@ -113,6 +113,7 @@ header nav ul a:hover {
 }
 
 .logo-section img {
+  margin: 0px auto;
   max-width: 87%;
   height: auto;
 }
@@ -127,10 +128,12 @@ header nav ul a:hover {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -139,8 +142,13 @@ header nav ul a:hover {
   border: 1px solid red;
 }
 
-.about-section img {
-  max-width: 300px;
+.about-section div {
+  width: 87%;
+  text-align: center;
+}
+
+.about-section div img {
+  width: 100%;
 }
 
 .menu-section {
