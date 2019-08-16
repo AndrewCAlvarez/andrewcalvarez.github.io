@@ -66,6 +66,35 @@ header nav ul {
   list-style: none;
 }
 
+header nav ul li {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+header nav ul a {
+  text-decoration: none;
+  color: black;
+  padding: 2vh;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+header nav ul a:hover {
+  background-color: black;
+  color: white;
+}
+
 .logo-section {
   margin-top: 10%;
   display: -webkit-box;
@@ -73,8 +102,8 @@ header nav ul {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap;
+      -ms-flex-flow: wrap column;
+          flex-flow: wrap column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -85,12 +114,13 @@ header nav ul {
 
 .logo-section img {
   max-width: 87%;
+  height: auto;
 }
 
 .logo-section h1 {
   position: absolute;
-  top: 200px;
-  left: 24px;
+  margin: 25% 10%;
+  color: #2e2d2d;
 }
 
 .about-section {
