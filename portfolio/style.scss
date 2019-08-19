@@ -1,3 +1,46 @@
+.button {
+    border: 1px solid rgba(207, 205, 205, 0.541);
+    background-color: rgba(168, 166, 166, 0.74);
+    color:white;
+    border-radius: .7vh;
+    padding: 1em;
+}
+
+.button:focus {
+    outline-style: none;
+    animation: focusAnimation forwards .5s ease-in-out;
+}
+
+
+.button--state-success{
+    background-color: rgb(82, 167, 82);
+    color: white;
+}
+
+.button--state-danger {
+    background-color: rgb(218, 115, 115);
+    color: white;
+}
+
+.button--state-danger:focus {
+    animation: dangerAnimation forwards .1s ease-in-out;
+}
+
+@keyframes focusAnimation {
+    0%{transform: scale(1);}
+    50%{transform: scale(0.8)}
+    100% {transform: scale(1);}
+}
+
+@keyframes dangerAnimation {
+    0% {transform:rotate(5deg);}
+    25%{transform:rotate(-5deg);}
+    50%{transform:roatate(0deg);}
+    75% {transform:rotate(5deg);}
+    100%{transform:rotate(0deg);}
+}
+
+//Modules added are above
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +48,10 @@
 }
 
 body {
-    background-color: rgb(184, 178, 178);
 }
 
 header {
+    z-index: 5;
     width: 100%;
     height: 10vh;
     display: flex;
@@ -86,8 +129,8 @@ header {
         left: 85%;
         width: 10vh;
         height: 10vh;
-        opacity: 0.3;
         z-index: 2;
+        opacity: 0.3;
         position: absolute;
         
     }
@@ -95,4 +138,259 @@ header {
     .toggler:checked ~ .menu {
         visibility: visible;
     }
+}
+
+
+
+
+
+
+.home {
+
+    //Parallax image
+    background-image: url(https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    //Set a height
+    height: 80vh;
+    //Create parallax effect
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    a {
+        text-decoration: none;
+    }
+
+    .button {
+        color:white;
+        border: none;
+        padding: 1em;
+        border-radius: .7vh;
+        max-width: 25vh;
+        background-color: rgb(168, 166, 166);
+    }
+    
+    .button:focus {
+        outline-style: none;
+        animation: focusAnimation forwards .5s ease-in-out;
+    }
+    
+    
+    .button--state-success{
+        color: white;
+        background-color: rgb(82, 167, 82);
+    }
+    
+    
+    @keyframes focusAnimation {
+        0%{transform: scale(1);}
+        50%{transform: scale(0.8)}
+        100% {transform: scale(1);}
+    }
+
+    .home--content {
+        color: white;
+        display: flex;
+        height: 80vh;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.377);
+    }
+
+    
+    
+}
+
+
+
+
+
+
+.sectionDivider {
+
+    border-radius: 50% 50%;
+    width: 8vh;height: 8vh;
+    display: flex;justify-content: center;align-content: center;flex-direction: column;text-align: center;
+    font-size: 1.5rem;
+    position: relative;
+    border: 1px solid white;
+    background-color: #fff;
+    top: -13vh;
+    left: 25vh;
+
+    i {
+        margin-top: -3vh;
+    }
+}
+
+
+
+
+
+
+.projects {
+    padding-top: 10vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+
+    h1 {
+        text-align: center;  
+    }
+
+    .projects--content {
+        text-align: center;
+
+        img {
+            width: 87%;
+            max-width: 500px;
+        }
+    }
+    
+
+
+}
+
+
+
+
+
+.tools {
+    
+    //Parallax image
+    background-image: url(https://images.pexels.com/photos/273222/pexels-photo-273222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    //Set a height
+    height: 120vh;
+    //Create parallax effect
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .tools--content {
+        padding-top: 10vh;
+        height: 120vh;
+        background-color: rgba(11, 179, 221, 0.767);
+        //Might need to remove this later once more content is added!!!!!!!!!!!!!!!!!
+
+        color: white;
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-content: center;
+
+        i {
+            font-size: 10rem;
+            padding: 5vh 0 5vh 0;
+        }
+    }
+}
+
+
+
+
+
+.about {
+    padding-top: 10vh;
+
+    .about--content{
+        text-align: center;
+        padding: 5vh;
+
+        img { 
+            border-radius: 50% 50%;
+            width: 25vh;
+            height: 25vh;
+        }
+    }
+}
+
+
+
+
+.contact {
+
+        //Parallax image
+        background-image: url(https://images.pexels.com/photos/2303781/pexels-photo-2303781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+        //Set a height
+        height: 80vh;
+        //Create parallax effect
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        padding-top: 10vh;
+        text-align: center;
+
+        form {
+            padding-top: 2vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            
+            
+            input {
+                margin-bottom: 3vh;
+                font-size: 1rem;
+                width: 40vh;
+                background-color: rgb(255, 255, 255);
+                border: none;
+                border-radius: 1vh;
+                padding: 1vh;
+                color: rgb(116, 181, 197);
+
+             
+
+                &:focus {
+                    outline: none;
+                    border-radius: 0;
+                }
+            }
+
+
+            textarea {
+                padding: 1vh;
+                width: 40vh;
+                height: 20vh;
+                margin-bottom: 3vh;
+                resize: none;
+                border-radius: 2vh;
+                border: none;
+                transition: all 0.3s ease;
+                font-size: 1rem;
+                color: rgb(116, 181, 197);
+
+                &:focus {
+                    outline: none;
+                    border-radius: 0;
+                }
+            }
+
+            button {
+                width: 100%;
+            }
+
+
+        }
+        .button {
+            color:white;
+            border: none;
+            padding: 1em;
+            border-radius: .7vh;
+            max-width: 40vh;
+            background-color: rgb(168, 166, 166);
+        }
+        
+        .button:focus {
+            outline-style: none;
+            animation: focusAnimation forwards .5s ease-in-out;
+        }
 }
