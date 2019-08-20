@@ -1,396 +1,608 @@
 .button {
-    border: 1px solid rgba(207, 205, 205, 0.541);
-    background-color: rgba(168, 166, 166, 0.74);
-    color:white;
-    border-radius: .7vh;
-    padding: 1em;
+  color: white;
+  border: 1px solid rgba(207, 205, 205, 0.541);
+  padding: 1em;
+  border-radius: 0.7vh;
+  background-color: rgba(168, 166, 166, 0.74);
 }
 
 .button:focus {
-    outline-style: none;
-    animation: focusAnimation forwards .5s ease-in-out;
+  outline-style: none;
+  animation: focusAnimation forwards 0.5s ease-in-out;
 }
 
-
-.button--state-success{
-    background-color: rgb(82, 167, 82);
-    color: white;
+.button--state-success {
+  color: white;
+  background-color: rgb(82, 167, 82);
 }
 
 .button--state-danger {
-    background-color: rgb(218, 115, 115);
-    color: white;
+  color: white;
+  background-color: rgb(218, 115, 115);
 }
 
 .button--state-danger:focus {
-    animation: dangerAnimation forwards .1s ease-in-out;
+  animation: dangerAnimation forwards 0.1s ease-in-out;
 }
 
 @keyframes focusAnimation {
-    0%{transform: scale(1);}
-    50%{transform: scale(0.8)}
-    100% {transform: scale(1);}
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes dangerAnimation {
-    0% {transform:rotate(5deg);}
-    25%{transform:rotate(-5deg);}
-    50%{transform:roatate(0deg);}
-    75% {transform:rotate(5deg);}
-    100%{transform:rotate(0deg);}
+  0% {
+    transform: rotate(5deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: roatate(0deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 //Modules added are above
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 header {
-    z-index: 5;
-    width: 100%;
+  z-index: 5;
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  position: fixed;
+  flex-flow: wrap;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.39);
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, 0.938);
+
+  div {
+    width: 15%;
     height: 10vh;
-    display: flex;
-    position: fixed;
-    flex-flow: wrap;
-    border-bottom: 1px solid rgba(128, 128, 128, 0.39);
-    flex-direction: row;
-    background-color: rgba(255, 255, 255, 0.938);
 
     .hamburger {
-        width: 15%;
-        height: 10vh;
-        display: flex;
-        justify-content: center;
-        
-        .hamburger--bar {
-            top: 2vh;
-            width: 90%;
-            height: 10%;
-            position: relative;
-            background-color: black;           
+      padding-right: 1vh;
+      width: 100%;
+      height: 10vh;
+      display: flex;
+      justify-content: center;
 
-            &:after {
-                top: 2vh;       
-                width: 100%;
-                height: 100%;
-                content:"";
-                position: absolute;
-                background-color: inherit;
-            }
-            &:before {
-                top: 4vh;
-                width: 100%;
-                height: 100%;
-                content:"";
-                position: absolute;
-                background-color: inherit;
-                
-            }
-        }
-    }
-
-    .logo {
-        left: 0;
-        width: 85%;
-        height: 90%;
-        display: flex;
-        align-content: center;
-        flex-direction: column;
-        justify-content: center;
-
-        a{
-            color: black;
-            width: 100%;
-            height: 25%;
-            font-size: 1.2rem;
-            text-align: left;
-            margin-left: 1vh;
-            text-decoration: none;
-        }
-    }
-
-    .menu {
-        order: 3;
+      .hamburger--bar {
+        transition: all 0.4s ease;
+        top: 2vh;
         width: 100%;
-        font-size: 1.5rem;
-        text-align: center;
-        transition: all .1s ease;
-        visibility: hidden;
-        line-height: 10vh;
-        background-color: #fff;
+        height: 10%;
+        position: relative;
+        background-color: black;
+
+        &:after {
+          top: 2vh;
+          width: 100%;
+          height: 100%;
+          content: "";
+          position: absolute;
+          transition: all 0.8s ease;
+          background-color: inherit;
+        }
+        &:before {
+          top: 4vh;
+          width: 100%;
+          height: 100%;
+          content: "";
+          position: absolute;
+          transition: all 0.4s ease;
+          background-color: inherit;
+        }
+      }
     }
+  }
 
-    .toggler {
-        left: 85%;
-        width: 10vh;
-        height: 10vh;
-        z-index: 2;
-        opacity: 0.3;
-        position: absolute;
-        
-    }
-
-    .toggler:checked ~ .menu {
-        visibility: visible;
-    }
-}
-
-
-
-
-
-
-.home {
-
-    //Parallax image
-    background-image: url(https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-    //Set a height
-    height: 80vh;
-    //Create parallax effect
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  .logo {
+    left: 0;
+    width: 85%;
+    height: 90%;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
 
     a {
-        text-decoration: none;
+      color: black;
+      width: 100%;
+      height: 25%;
+      font-size: 1.2rem;
+      text-align: left;
+      margin-left: 1vh;
+      text-decoration: none;
     }
+  }
 
-    .button {
-        color:white;
-        border: none;
-        padding: 1em;
-        border-radius: .7vh;
-        max-width: 25vh;
-        background-color: rgb(168, 166, 166);
-    }
-    
-    .button:focus {
-        outline-style: none;
-        animation: focusAnimation forwards .5s ease-in-out;
-    }
-    
-    
-    .button--state-success{
-        color: white;
-        background-color: rgb(82, 167, 82);
-    }
-    
-    
-    @keyframes focusAnimation {
-        0%{transform: scale(1);}
-        50%{transform: scale(0.8)}
-        100% {transform: scale(1);}
-    }
-
-    .home--content {
-        color: white;
-        display: flex;
-        height: 80vh;
-        flex-direction: column;
-        justify-content: center;
-        align-content: center;
-        text-align: center;
-        background-color: rgba(0, 0, 0, 0.377);
-    }
-
-    
-    
-}
-
-
-
-
-
-
-.sectionDivider {
-
-    border-radius: 50% 50%;
-    width: 8vh;height: 8vh;
-    display: flex;justify-content: center;align-content: center;flex-direction: column;text-align: center;
-    font-size: 1.5rem;
-    position: relative;
-    border: 1px solid white;
-    background-color: #fff;
-    top: -13vh;
-    left: 25vh;
-
-    i {
-        margin-top: -3vh;
-    }
-}
-
-
-
-
-
-
-.projects {
-    padding-top: 10vh;
+  .menu {
+    position: absolute;
+    left: 100%;
+    order: 3;
+    width: 100%;
     height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    font-size: 1.5rem;
+    transition: all 0.1s ease;
+    text-align: center;
+    transition: all 0.4s ease;
+    visibility: hidden;
+    line-height: 10vh;
     align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(11, 179, 221, 0.822);
 
-    h1 {
-        text-align: center;  
+    ul {
+      font-weight: bolder;
+      list-style-type: none;
     }
 
-    .projects--content {
-        text-align: center;
-
-        img {
-            width: 87%;
-            max-width: 500px;
-        }
+    a {
+      color: white;
+      text-decoration: none;
     }
-    
+  }
 
+  .toggler {
+    left: 83%;
+    width: 10vh;
+    height: 10vh;
+    z-index: 2;
+    opacity: 0;
+    position: absolute;
+  }
 
+  .toggler:checked ~ div div .menu {
+    visibility: visible;
+    left: 0;
+  }
+
+  .toggler:checked ~ div .hamburger .hamburger--bar {
+    top: 4vh;
+    transform: rotate(-135deg);
+  }
+
+  .toggler:checked ~ div .hamburger .hamburger--bar::after {
+    top: 0vh;
+    left: 0vh;
+    opacity: 0;
+    transform: rotate(-5deg);
+  }
+  .toggler:checked ~ div .hamburger .hamburger--bar::before {
+    top: 0vh;
+    left: 0vh;
+    transform: rotate(90deg);
+  }
 }
 
+.home {
+  //Parallax image
+  background-image: url(https://images.pexels.com/photos/436784/pexels-photo-436784.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  //Set a height
+  height: 80vh;
+  //Create parallax effect
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 
+  a {
+    text-decoration: none;
+    font-size: 1rem;
+  }
 
+  .button {
+    color: white;
+    border: none;
+    border-radius: 0.7vh;
+    background-color: rgb(168, 166, 166);
+    margin-left: 4.5vh;
+  }
 
+  .button:focus {
+    animation: focusAnimation forwards 0.5s ease-in-out;
+    outline-style: none;
+  }
+
+  .button--state-success {
+    color: white;
+    max-width: 300px;
+    background-color: rgb(82, 167, 82);
+  }
+
+  @keyframes focusAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.8);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .home--content {
+    color: white;
+    height: 80vh;
+    display: flex;
+    text-align: center;
+    padding: 2vh;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.377);
+
+    .home--content-buttons {
+      margin-top: 15vh;
+
+      button {
+        width: 25vh;
+        border: none;
+        background-color: rgba(255, 255, 255, 0);
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
+
+.sectionDivider {
+  top: -13vh;
+  left: 25vh;
+  width: 8vh;
+  height: 8vh;
+  border: 1px solid white;
+  display: flex;
+  position: relative;
+  font-size: 1.5rem;
+  text-align: center;
+  align-content: center;
+  border-radius: 50% 50%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+
+  i {
+    margin-top: -3vh;
+
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.projects {
+  display: flex;
+  padding-top: 10vh;
+  align-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  h1 {
+    text-align: center;
+    width: 87%;
+    margin: 0 auto;
+    padding: 2vh;
+    letter-spacing: 1vh;
+    font-size: 1.5rem;
+    box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
+  }
+
+  .projects--content {
+    padding-top: 4vh;
+    text-align: center;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-evenly;
+    align-content: space-around;
+
+    ul {
+      list-style-type: none;
+      width: 87%;
+
+      li {
+        width: 100%;
+        margin-bottom: 5vh;
+        box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
+
+        a {
+          text-decoration: none;
+          color: black;
+
+          img {
+            width: 100%;
+          }
+
+          h4 {
+            text-align: left;
+            letter-spacing: 1vh;
+            font-size: 1.5rem;
+            background-color: #fff;
+            color: black;
+            padding-left: 10%;
+            width: 100%;
+            height: 10%;
+          }
+        }
+      }
+    }
+  }
+}
 
 .tools {
-    
-    //Parallax image
-    background-image: url(https://images.pexels.com/photos/273222/pexels-photo-273222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-    //Set a height
-    height: 120vh;
-    //Create parallax effect
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  //Parallax image
+  background-image: url(https://images.pexels.com/photos/273222/pexels-photo-273222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  //Set a height
+  height: 120vh;
+  //Create parallax effect
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 
-    .tools--content {
-        padding-top: 10vh;
-        height: 120vh;
-        background-color: rgba(11, 179, 221, 0.767);
-        //Might need to remove this later once more content is added!!!!!!!!!!!!!!!!!
+  h1 {
+    text-align: center;
+    width: 87%;
+    margin: 0 auto;
+    padding: 2vh;
+    letter-spacing: 1vh;
+    border: 1vh solid white;
+    font-size: 3rem;
+    font-weight: bolder;
+    border-radius: 3vh;
+    animation: headingAnimation 10s infinite alternate ease-in-out;
+  }
 
-        color: white;
-        display: flex;
-        text-align: center;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-content: center;
-
-        i {
-            font-size: 10rem;
-            padding: 5vh 0 5vh 0;
-        }
+  @keyframes headingAnimation {
+    0% {
+      border-radius: 10vh 10vh 10vh 10vh;
     }
+    20% {
+      border-radius: 10vh 10vh 10vh 10vh;
+    }
+    40% {
+      border-radius: 3vh;
+    }
+    60% {
+      border-radius: 3vh;
+    }
+    80% {
+      border-radius: 0 2vh 0 2vh;
+    }
+    100% {
+      border-radius: 0 2vh 0 2vh;
+    }
+  }
+
+  .tools--content {
+    height: 120vh;
+    padding-top: 10vh;
+    background-color: rgba(11, 179, 221, 0.767);
+    //Might need to remove this later once more content is added!!!!!!!!!!!!!!!!!
+
+    color: white;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    i {
+      padding: 5vh 0 5vh 0;
+      font-size: 10rem;
+    }
+    .htmlIcon {
+      animation: htmlAnimation infinite 5.2s alternate ease-in-out;
+    }
+    .cssIcon {
+      animation: cssAnimation infinite 5s alternate ease-in-out;
+    }
+    .jsIcon {
+      animation: jsAnimation infinite 5.1s alternate ease-in-out;
+    }
+  }
+
+  @keyframes htmlAnimation {
+    0% {
+      color: white;
+    }
+    20% {
+      color: white;
+    }
+    40% {
+      color: white;
+    }
+    60% {
+      color: white;
+    }
+    100% {
+      color: tomato;
+    }
+  }
+  @keyframes cssAnimation {
+    0% {
+      color: white;
+    }
+    20% {
+      color: white;
+    }
+    40% {
+      color: white;
+    }
+    60% {
+      color: white;
+    }
+    100% {
+      color: dodgerblue;
+    }
+  }
+  @keyframes jsAnimation {
+    0% {
+      color: white;
+    }
+    20% {
+      color: white;
+    }
+    40% {
+      color: white;
+    }
+    60% {
+      color: white;
+    }
+    100% {
+      color: orange;
+    }
+  }
 }
-
-
-
-
 
 .about {
-    padding-top: 10vh;
+  padding-top: 10vh;
 
-    .about--content{
-        text-align: center;
-        padding: 5vh;
+  h1 {
+    text-align: center;
+    width: 87%;
+    margin: 0 auto;
+    padding: 2vh;
+    letter-spacing: 1vh;
+    border: 1vh solid white;
+    font-size: 3rem;
+    font-weight: bolder;
+  }
+  .about--content {
+    padding: 5vh;
+    text-align: center;
 
-        img { 
-            border-radius: 50% 50%;
-            width: 25vh;
-            height: 25vh;
-        }
+    img {
+      width: 25vh;
+      height: 25vh;
+      border-radius: 50% 50%;
     }
+  }
 }
 
-
-
-
 .contact {
+  //Parallax image
+  background-image: url(https://images.pexels.com/photos/2303781/pexels-photo-2303781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  //Set a height
+  height: 80vh;
+  //Create parallax effect
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 
-        //Parallax image
-        background-image: url(https://images.pexels.com/photos/2303781/pexels-photo-2303781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-        //Set a height
-        height: 80vh;
-        //Create parallax effect
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+  text-align: center;
+  padding-top: 10vh;
 
-        padding-top: 10vh;
-        text-align: center;
+  h1 {
+    text-align: center;
+    width: 40vh;
+    margin: 0 auto;
+    padding: 1vh;
+    letter-spacing: 1vh;
+    border: 1vh solid white;
+    border-radius: 3vh;
+    background-color: rgba(255, 255, 255, 0.788);
+    font-size: 3rem;
+    font-weight: bolder;
+  }
 
-        form {
-            padding-top: 2vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            
-            
-            input {
-                margin-bottom: 3vh;
-                font-size: 1rem;
-                width: 40vh;
-                background-color: rgb(255, 255, 255);
-                border: none;
-                border-radius: 1vh;
-                padding: 1vh;
-                color: rgb(116, 181, 197);
+  form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 2vh;
+    flex-direction: column;
+    justify-content: center;
 
-             
+    input {
+      width: 40vh;
+      color: rgb(116, 181, 197);
+      border: none;
+      padding: 1vh;
+      font-size: 1rem;
+      border-radius: 1vh;
+      margin-bottom: 3vh;
+      background-color: rgb(255, 255, 255);
 
-                &:focus {
-                    outline: none;
-                    border-radius: 0;
-                }
-            }
+      &:focus {
+        outline: none;
+        border-radius: 0;
+      }
+    }
 
+    textarea {
+      color: rgb(116, 181, 197);
+      width: 40vh;
+      border: none;
+      height: 20vh;
+      resize: none;
+      padding: 1vh;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border-radius: 2vh;
+      margin-bottom: 3vh;
 
-            textarea {
-                padding: 1vh;
-                width: 40vh;
-                height: 20vh;
-                margin-bottom: 3vh;
-                resize: none;
-                border-radius: 2vh;
-                border: none;
-                transition: all 0.3s ease;
-                font-size: 1rem;
-                color: rgb(116, 181, 197);
+      &:focus {
+        outline: none;
+        border-radius: 0;
+      }
+    }
 
-                &:focus {
-                    outline: none;
-                    border-radius: 0;
-                }
-            }
+    button {
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+  .button--state-success {
+    color: white;
+    border: none;
+    padding: 1em;
+    max-width: 40vh;
+    border-radius: 0.7vh;
+  }
 
-            button {
-                width: 100%;
-            }
+  .button--state-success:focus {
+    outline-style: none;
+    animation: focusAnimation forwards 0.5s ease-in-out;
+  }
 
+  .icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 13vh auto 0;
 
-        }
-        .button {
-            color:white;
-            border: none;
-            padding: 1em;
-            border-radius: .7vh;
-            max-width: 40vh;
-            background-color: rgb(168, 166, 166);
-        }
-        
-        .button:focus {
-            outline-style: none;
-            animation: focusAnimation forwards .5s ease-in-out;
-        }
+    a {
+      color: #6e5494;
+      font-size: 4rem;
+      margin-top: -1.4px;
+      text-decoration: none;
+    }
+  }
 }

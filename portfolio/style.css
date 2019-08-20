@@ -1,30 +1,30 @@
 .button {
-  border: 1px solid rgba(207, 205, 205, 0.541);
-  background-color: rgba(168, 166, 166, 0.74);
   color: white;
-  border-radius: .7vh;
+  border: 1px solid rgba(207, 205, 205, 0.541);
   padding: 1em;
+  border-radius: 0.7vh;
+  background-color: rgba(168, 166, 166, 0.74);
 }
 
 .button:focus {
   outline-style: none;
-  -webkit-animation: focusAnimation forwards .5s ease-in-out;
-          animation: focusAnimation forwards .5s ease-in-out;
+  -webkit-animation: focusAnimation forwards 0.5s ease-in-out;
+          animation: focusAnimation forwards 0.5s ease-in-out;
 }
 
 .button--state-success {
-  background-color: #52a752;
   color: white;
+  background-color: #52a752;
 }
 
 .button--state-danger {
-  background-color: #da7373;
   color: white;
+  background-color: #da7373;
 }
 
 .button--state-danger:focus {
-  -webkit-animation: dangerAnimation forwards .1s ease-in-out;
-          animation: dangerAnimation forwards .1s ease-in-out;
+  -webkit-animation: dangerAnimation forwards 0.1s ease-in-out;
+          animation: dangerAnimation forwards 0.1s ease-in-out;
 }
 
 @-webkit-keyframes focusAnimation {
@@ -110,6 +110,10 @@
           box-sizing: border-box;
 }
 
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
 header {
   z-index: 5;
   width: 100%;
@@ -128,8 +132,14 @@ header {
   background-color: rgba(255, 255, 255, 0.938);
 }
 
-header .hamburger {
+header div {
   width: 15%;
+  height: 10vh;
+}
+
+header div .hamburger {
+  padding-right: 1vh;
+  width: 100%;
   height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -139,29 +149,35 @@ header .hamburger {
           justify-content: center;
 }
 
-header .hamburger .hamburger--bar {
+header div .hamburger .hamburger--bar {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   top: 2vh;
-  width: 90%;
+  width: 100%;
   height: 10%;
   position: relative;
   background-color: black;
 }
 
-header .hamburger .hamburger--bar:after {
+header div .hamburger .hamburger--bar:after {
   top: 2vh;
   width: 100%;
   height: 100%;
   content: "";
   position: absolute;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
   background-color: inherit;
 }
 
-header .hamburger .hamburger--bar:before {
+header div .hamburger .hamburger--bar:before {
   top: 4vh;
   width: 100%;
   height: 100%;
   content: "";
   position: absolute;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   background-color: inherit;
 }
 
@@ -194,62 +210,112 @@ header .logo a {
 }
 
 header .menu {
+  position: absolute;
+  left: 100%;
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
   width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   font-size: 1.5rem;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
   text-align: center;
-  -webkit-transition: all .1s ease;
-  transition: all .1s ease;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   visibility: hidden;
   line-height: 10vh;
-  background-color: #fff;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: rgba(11, 179, 221, 0.822);
+}
+
+header .menu ul {
+  font-weight: bolder;
+  list-style-type: none;
+}
+
+header .menu a {
+  color: white;
+  text-decoration: none;
 }
 
 header .toggler {
-  left: 85%;
+  left: 83%;
   width: 10vh;
   height: 10vh;
   z-index: 2;
-  opacity: 0.3;
+  opacity: 0;
   position: absolute;
 }
 
-header .toggler:checked ~ .menu {
+header .toggler:checked ~ div div .menu {
   visibility: visible;
+  left: 0;
+}
+
+header .toggler:checked ~ div .hamburger .hamburger--bar {
+  top: 4vh;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+header .toggler:checked ~ div .hamburger .hamburger--bar::after {
+  top: 0vh;
+  left: 0vh;
+  opacity: 0;
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+}
+
+header .toggler:checked ~ div .hamburger .hamburger--bar::before {
+  top: 0vh;
+  left: 0vh;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .home {
-  background-image: url(https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-image: url(https://images.pexels.com/photos/436784/pexels-photo-436784.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   height: 80vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .home a {
   text-decoration: none;
+  font-size: 1rem;
 }
 
 .home .button {
   color: white;
   border: none;
-  padding: 1em;
-  border-radius: .7vh;
-  max-width: 25vh;
+  border-radius: 0.7vh;
   background-color: #a8a6a6;
+  margin-left: 4.5vh;
 }
 
 .home .button:focus {
+  -webkit-animation: focusAnimation forwards 0.5s ease-in-out;
+          animation: focusAnimation forwards 0.5s ease-in-out;
   outline-style: none;
-  -webkit-animation: focusAnimation forwards .5s ease-in-out;
-          animation: focusAnimation forwards .5s ease-in-out;
 }
 
 .home .button--state-success {
   color: white;
+  max-width: 300px;
   background-color: #52a752;
 }
 
@@ -270,10 +336,14 @@ header .toggler:checked ~ .menu {
 
 .home .home--content {
   color: white;
+  height: 80vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 80vh;
+  text-align: center;
+  padding: 2vh;
+  -ms-flex-line-pack: center;
+      align-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -281,47 +351,61 @@ header .toggler:checked ~ .menu {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  text-align: center;
   background-color: rgba(0, 0, 0, 0.377);
 }
 
+.home .home--content .home--content-buttons {
+  margin-top: 15vh;
+}
+
+.home .home--content .home--content-buttons button {
+  width: 25vh;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.home .home--content .home--content-buttons button:focus {
+  outline: none;
+}
+
 .sectionDivider {
-  border-radius: 50% 50%;
+  top: -13vh;
+  left: 25vh;
   width: 8vh;
   height: 8vh;
+  border: 1px solid white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  position: relative;
+  font-size: 1.5rem;
+  text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  border-radius: 50% 50%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
-  font-size: 1.5rem;
-  position: relative;
-  border: 1px solid white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #fff;
-  top: -13vh;
-  left: 25vh;
 }
 
 .sectionDivider i {
   margin-top: -3vh;
+  text-decoration: none;
+  color: black;
 }
 
 .projects {
-  padding-top: 10vh;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 10vh;
+  -ms-flex-line-pack: center;
+      align-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -329,41 +413,144 @@ header .toggler:checked ~ .menu {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -ms-flex-line-pack: center;
-      align-content: center;
 }
 
 .projects h1 {
   text-align: center;
+  width: 87%;
+  margin: 0 auto;
+  padding: 2vh;
+  letter-spacing: 1vh;
+  font-size: 1.5rem;
+  -webkit-box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
+          box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
 }
 
 .projects .projects--content {
+  padding-top: 4vh;
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
 }
 
-.projects .projects--content img {
+.projects .projects--content ul {
+  list-style-type: none;
   width: 87%;
-  max-width: 500px;
+}
+
+.projects .projects--content ul li {
+  width: 100%;
+  margin-bottom: 5vh;
+  -webkit-box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
+          box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
+}
+
+.projects .projects--content ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.projects .projects--content ul li a img {
+  width: 100%;
+}
+
+.projects .projects--content ul li a h4 {
+  text-align: left;
+  letter-spacing: 1vh;
+  font-size: 1.5rem;
+  background-color: #fff;
+  color: black;
+  padding-left: 10%;
+  width: 100%;
+  height: 10%;
 }
 
 .tools {
   background-image: url(https://images.pexels.com/photos/273222/pexels-photo-273222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   height: 120vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.tools h1 {
+  text-align: center;
+  width: 87%;
+  margin: 0 auto;
+  padding: 2vh;
+  letter-spacing: 1vh;
+  border: 1vh solid white;
+  font-size: 3rem;
+  font-weight: bolder;
+  border-radius: 3vh;
+  -webkit-animation: headingAnimation 10s infinite alternate ease-in-out;
+          animation: headingAnimation 10s infinite alternate ease-in-out;
+}
+
+@-webkit-keyframes headingAnimation {
+  0% {
+    border-radius: 10vh 10vh 10vh 10vh;
+  }
+  20% {
+    border-radius: 10vh 10vh 10vh 10vh;
+  }
+  40% {
+    border-radius: 3vh;
+  }
+  60% {
+    border-radius: 3vh;
+  }
+  80% {
+    border-radius: 0 2vh 0 2vh;
+  }
+  100% {
+    border-radius: 0 2vh 0 2vh;
+  }
+}
+
+@keyframes headingAnimation {
+  0% {
+    border-radius: 10vh 10vh 10vh 10vh;
+  }
+  20% {
+    border-radius: 10vh 10vh 10vh 10vh;
+  }
+  40% {
+    border-radius: 3vh;
+  }
+  60% {
+    border-radius: 3vh;
+  }
+  80% {
+    border-radius: 0 2vh 0 2vh;
+  }
+  100% {
+    border-radius: 0 2vh 0 2vh;
+  }
 }
 
 .tools .tools--content {
-  padding-top: 10vh;
   height: 120vh;
+  padding-top: 10vh;
   background-color: rgba(11, 179, 221, 0.767);
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-align: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -371,46 +558,195 @@ header .toggler:checked ~ .menu {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -ms-flex-line-pack: center;
-      align-content: center;
 }
 
 .tools .tools--content i {
-  font-size: 10rem;
   padding: 5vh 0 5vh 0;
+  font-size: 10rem;
+}
+
+.tools .tools--content .htmlIcon {
+  -webkit-animation: htmlAnimation infinite 5.2s alternate ease-in-out;
+          animation: htmlAnimation infinite 5.2s alternate ease-in-out;
+}
+
+.tools .tools--content .cssIcon {
+  -webkit-animation: cssAnimation infinite 5s alternate ease-in-out;
+          animation: cssAnimation infinite 5s alternate ease-in-out;
+}
+
+.tools .tools--content .jsIcon {
+  -webkit-animation: jsAnimation infinite 5.1s alternate ease-in-out;
+          animation: jsAnimation infinite 5.1s alternate ease-in-out;
+}
+
+@-webkit-keyframes htmlAnimation {
+  0% {
+    color: white;
+  }
+  20% {
+    color: white;
+  }
+  40% {
+    color: white;
+  }
+  60% {
+    color: white;
+  }
+  100% {
+    color: tomato;
+  }
+}
+
+@keyframes htmlAnimation {
+  0% {
+    color: white;
+  }
+  20% {
+    color: white;
+  }
+  40% {
+    color: white;
+  }
+  60% {
+    color: white;
+  }
+  100% {
+    color: tomato;
+  }
+}
+
+@-webkit-keyframes cssAnimation {
+  0% {
+    color: white;
+  }
+  20% {
+    color: white;
+  }
+  40% {
+    color: white;
+  }
+  60% {
+    color: white;
+  }
+  100% {
+    color: dodgerblue;
+  }
+}
+
+@keyframes cssAnimation {
+  0% {
+    color: white;
+  }
+  20% {
+    color: white;
+  }
+  40% {
+    color: white;
+  }
+  60% {
+    color: white;
+  }
+  100% {
+    color: dodgerblue;
+  }
+}
+
+@-webkit-keyframes jsAnimation {
+  0% {
+    color: white;
+  }
+  20% {
+    color: white;
+  }
+  40% {
+    color: white;
+  }
+  60% {
+    color: white;
+  }
+  100% {
+    color: orange;
+  }
+}
+
+@keyframes jsAnimation {
+  0% {
+    color: white;
+  }
+  20% {
+    color: white;
+  }
+  40% {
+    color: white;
+  }
+  60% {
+    color: white;
+  }
+  100% {
+    color: orange;
+  }
 }
 
 .about {
   padding-top: 10vh;
 }
 
-.about .about--content {
+.about h1 {
   text-align: center;
+  width: 87%;
+  margin: 0 auto;
+  padding: 2vh;
+  letter-spacing: 1vh;
+  border: 1vh solid white;
+  font-size: 3rem;
+  font-weight: bolder;
+}
+
+.about .about--content {
   padding: 5vh;
+  text-align: center;
 }
 
 .about .about--content img {
-  border-radius: 50% 50%;
   width: 25vh;
   height: 25vh;
+  border-radius: 50% 50%;
 }
 
 .contact {
   background-image: url(https://images.pexels.com/photos/2303781/pexels-photo-2303781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   height: 80vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  padding-top: 10vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   text-align: center;
+  padding-top: 10vh;
+}
+
+.contact h1 {
+  text-align: center;
+  width: 40vh;
+  margin: 0 auto;
+  padding: 1vh;
+  letter-spacing: 1vh;
+  border: 1vh solid white;
+  border-radius: 3vh;
+  background-color: rgba(255, 255, 255, 0.788);
+  font-size: 3rem;
+  font-weight: bolder;
 }
 
 .contact form {
-  padding-top: 2vh;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 2vh;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -418,21 +754,17 @@ header .toggler:checked ~ .menu {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
 }
 
 .contact form input {
-  margin-bottom: 3vh;
-  font-size: 1rem;
   width: 40vh;
-  background-color: white;
-  border: none;
-  border-radius: 1vh;
-  padding: 1vh;
   color: #74b5c5;
+  border: none;
+  padding: 1vh;
+  font-size: 1rem;
+  border-radius: 1vh;
+  margin-bottom: 3vh;
+  background-color: white;
 }
 
 .contact form input:focus {
@@ -441,17 +773,17 @@ header .toggler:checked ~ .menu {
 }
 
 .contact form textarea {
-  padding: 1vh;
+  color: #74b5c5;
   width: 40vh;
-  height: 20vh;
-  margin-bottom: 3vh;
-  resize: none;
-  border-radius: 2vh;
   border: none;
+  height: 20vh;
+  resize: none;
+  padding: 1vh;
+  font-size: 1rem;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  font-size: 1rem;
-  color: #74b5c5;
+  border-radius: 2vh;
+  margin-bottom: 3vh;
 }
 
 .contact form textarea:focus {
@@ -461,20 +793,33 @@ header .toggler:checked ~ .menu {
 
 .contact form button {
   width: 100%;
+  font-size: 1rem;
 }
 
-.contact .button {
+.contact .button--state-success {
   color: white;
   border: none;
   padding: 1em;
-  border-radius: .7vh;
   max-width: 40vh;
-  background-color: #a8a6a6;
+  border-radius: 0.7vh;
 }
 
-.contact .button:focus {
+.contact .button--state-success:focus {
   outline-style: none;
-  -webkit-animation: focusAnimation forwards .5s ease-in-out;
-          animation: focusAnimation forwards .5s ease-in-out;
+  -webkit-animation: focusAnimation forwards 0.5s ease-in-out;
+          animation: focusAnimation forwards 0.5s ease-in-out;
+}
+
+.contact .icon {
+  width: 4rem;
+  height: 4rem;
+  margin: 13vh auto 0;
+}
+
+.contact .icon a {
+  color: #6e5494;
+  font-size: 4rem;
+  margin-top: -1.4px;
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
