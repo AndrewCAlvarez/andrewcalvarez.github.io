@@ -7,12 +7,13 @@
 }
 
 .button:focus {
-  outline-style: none;
   animation: focusAnimation forwards 0.5s ease-in-out;
+  outline-style: none;
 }
 
 .button--state-success {
   color: white;
+  padding: 1em 1.5em;
   background-color: rgb(82, 167, 82);
 }
 
@@ -63,14 +64,14 @@
 }
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 header {
-  z-index: 5;
   width: 100%;
   height: 10vh;
   display: flex;
+  z-index: 5;
   position: fixed;
   flex-flow: wrap;
   border-bottom: 1px solid rgba(128, 128, 128, 0.39);
@@ -82,18 +83,18 @@ header {
     height: 10vh;
 
     .hamburger {
-      padding-right: 1vh;
       width: 100%;
       height: 10vh;
       display: flex;
+      padding-right: 1vh;
       justify-content: center;
 
       .hamburger--bar {
-        transition: all 0.4s ease;
         top: 2vh;
         width: 100%;
         height: 10%;
         position: relative;
+        transition: all 0.4s ease;
         background-color: black;
 
         &:after {
@@ -131,7 +132,8 @@ header {
       color: black;
       width: 100%;
       height: 25%;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
+      font-weight: bold;
       text-align: left;
       margin-left: 1vh;
       text-decoration: none;
@@ -139,17 +141,16 @@ header {
   }
 
   .menu {
-    position: absolute;
     left: 100%;
     order: 3;
     width: 100%;
     height: 100vh;
     display: flex;
+    position: absolute;
     font-size: 1.5rem;
     transition: all 0.1s ease;
     text-align: center;
     transition: all 0.4s ease;
-    visibility: hidden;
     line-height: 10vh;
     align-content: center;
     flex-direction: column;
@@ -159,11 +160,28 @@ header {
     ul {
       font-weight: bolder;
       list-style-type: none;
-    }
 
-    a {
-      color: white;
-      text-decoration: none;
+      li {
+        a {
+          color: white;
+          position: relative;
+          text-decoration: none;
+          &::before {
+            left: 0;
+            width: 100%;
+            bottom: 0;
+            height: 2px;
+            content: "";
+            position: absolute;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+            background-color: #fff;
+          }
+          &:hover:before {
+            transform: scaleX(1);
+          }
+        }
+      }
     }
   }
 
@@ -177,8 +195,8 @@ header {
   }
 
   .toggler:checked ~ div div .menu {
-    visibility: visible;
     left: 0;
+    visibility: visible;
   }
 
   .toggler:checked ~ div .hamburger .hamburger--bar {
@@ -211,16 +229,16 @@ header {
   background-attachment: fixed;
 
   a {
-    text-decoration: none;
     font-size: 1rem;
+    text-decoration: none;
   }
 
   .button {
     color: white;
     border: none;
+    margin-left: 4.5vh;
     border-radius: 0.7vh;
     background-color: rgb(168, 166, 166);
-    margin-left: 4.5vh;
   }
 
   .button:focus {
@@ -230,7 +248,6 @@ header {
 
   .button--state-success {
     color: white;
-    max-width: 300px;
     background-color: rgb(82, 167, 82);
   }
 
@@ -250,8 +267,8 @@ header {
     color: white;
     height: 80vh;
     display: flex;
-    text-align: center;
     padding: 2vh;
+    text-align: center;
     align-content: center;
     flex-direction: column;
     justify-content: center;
@@ -259,8 +276,10 @@ header {
 
     .home--content-buttons {
       margin-top: 15vh;
+      width: 100%;
 
       button {
+        border: 1px solid pink;
         width: 25vh;
         border: none;
         background-color: rgba(255, 255, 255, 0);
@@ -290,10 +309,9 @@ header {
   background-color: #fff;
 
   i {
-    margin-top: -3vh;
-
-    text-decoration: none;
     color: black;
+    margin-top: -3vh;
+    text-decoration: none;
   }
 }
 
@@ -305,49 +323,49 @@ header {
   justify-content: flex-start;
 
   h1 {
-    text-align: center;
     width: 87%;
     margin: 0 auto;
     padding: 2vh;
-    letter-spacing: 1vh;
     font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 1vh;
     box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
   }
 
   .projects--content {
-    padding-top: 4vh;
-    text-align: center;
     display: flex;
     flex-flow: wrap row;
-    justify-content: space-evenly;
+    text-align: center;
+    padding-top: 4vh;
     align-content: space-around;
+    justify-content: space-evenly;
 
     ul {
-      list-style-type: none;
       width: 87%;
+      list-style-type: none;
 
       li {
         width: 100%;
-        margin-bottom: 5vh;
         box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
+        margin-bottom: 5vh;
 
         a {
-          text-decoration: none;
           color: black;
+          text-decoration: none;
 
           img {
             width: 100%;
           }
 
           h4 {
-            text-align: left;
-            letter-spacing: 1vh;
-            font-size: 1.5rem;
-            background-color: #fff;
             color: black;
-            padding-left: 10%;
             width: 100%;
             height: 10%;
+            font-size: 1.5rem;
+            text-align: left;
+            padding-left: 10%;
+            letter-spacing: 1vh;
+            background-color: #fff;
           }
         }
       }
@@ -367,16 +385,16 @@ header {
   background-attachment: fixed;
 
   h1 {
-    text-align: center;
     width: 87%;
     margin: 0 auto;
-    padding: 2vh;
-    letter-spacing: 1vh;
     border: 1vh solid white;
+    padding: 2vh;
     font-size: 3rem;
+    animation: headingAnimation 10s infinite alternate ease-in-out;
+    text-align: center;
     font-weight: bolder;
     border-radius: 3vh;
-    animation: headingAnimation 10s infinite alternate ease-in-out;
+    letter-spacing: 1vh;
   }
 
   @keyframes headingAnimation {
@@ -418,13 +436,13 @@ header {
       font-size: 10rem;
     }
     .htmlIcon {
-      animation: htmlAnimation infinite 5.2s alternate ease-in-out;
+      animation: htmlAnimation infinite 10.2s alternate ease-in-out;
     }
     .cssIcon {
-      animation: cssAnimation infinite 5s alternate ease-in-out;
+      animation: cssAnimation infinite 8s alternate ease-in-out;
     }
     .jsIcon {
-      animation: jsAnimation infinite 5.1s alternate ease-in-out;
+      animation: jsAnimation infinite 13.1s alternate ease-in-out;
     }
   }
 
@@ -485,14 +503,14 @@ header {
   padding-top: 10vh;
 
   h1 {
-    text-align: center;
     width: 87%;
+    border: 1vh solid white;
     margin: 0 auto;
     padding: 2vh;
-    letter-spacing: 1vh;
-    border: 1vh solid white;
     font-size: 3rem;
+    text-align: center;
     font-weight: bolder;
+    letter-spacing: 1vh;
   }
   .about--content {
     padding: 5vh;
@@ -521,16 +539,16 @@ header {
   padding-top: 10vh;
 
   h1 {
-    text-align: center;
     width: 40vh;
+    border: 1vh solid white;
     margin: 0 auto;
     padding: 1vh;
-    letter-spacing: 1vh;
-    border: 1vh solid white;
-    border-radius: 3vh;
-    background-color: rgba(255, 255, 255, 0.788);
     font-size: 3rem;
+    text-align: center;
     font-weight: bolder;
+    border-radius: 3vh;
+    letter-spacing: 1vh;
+    background-color: rgba(255, 255, 255, 0.788);
   }
 
   form {
@@ -589,8 +607,8 @@ header {
   }
 
   .button--state-success:focus {
-    outline-style: none;
     animation: focusAnimation forwards 0.5s ease-in-out;
+    outline-style: none;
   }
 
   .icon {

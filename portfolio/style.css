@@ -7,13 +7,14 @@
 }
 
 .button:focus {
-  outline-style: none;
   -webkit-animation: focusAnimation forwards 0.5s ease-in-out;
           animation: focusAnimation forwards 0.5s ease-in-out;
+  outline-style: none;
 }
 
 .button--state-success {
   color: white;
+  padding: 1em 1.5em;
   background-color: #52a752;
 }
 
@@ -111,16 +112,16 @@
 }
 
 body {
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Nunito", sans-serif;
 }
 
 header {
-  z-index: 5;
   width: 100%;
   height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 5;
   position: fixed;
   -ms-flex-flow: wrap;
       flex-flow: wrap;
@@ -138,24 +139,24 @@ header div {
 }
 
 header div .hamburger {
-  padding-right: 1vh;
   width: 100%;
   height: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-right: 1vh;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
 header div .hamburger .hamburger--bar {
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
   top: 2vh;
   width: 100%;
   height: 10%;
   position: relative;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
   background-color: black;
 }
 
@@ -203,14 +204,14 @@ header .logo a {
   color: black;
   width: 100%;
   height: 25%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   text-align: left;
   margin-left: 1vh;
   text-decoration: none;
 }
 
 header .menu {
-  position: absolute;
   left: 100%;
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
@@ -220,13 +221,13 @@ header .menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: absolute;
   font-size: 1.5rem;
   -webkit-transition: all 0.1s ease;
   transition: all 0.1s ease;
   text-align: center;
   -webkit-transition: all 0.4s ease;
   transition: all 0.4s ease;
-  visibility: hidden;
   line-height: 10vh;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -245,9 +246,29 @@ header .menu ul {
   list-style-type: none;
 }
 
-header .menu a {
+header .menu ul li a {
   color: white;
+  position: relative;
   text-decoration: none;
+}
+
+header .menu ul li a::before {
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  height: 2px;
+  content: "";
+  position: absolute;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+}
+
+header .menu ul li a:hover:before {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 header .toggler {
@@ -260,8 +281,8 @@ header .toggler {
 }
 
 header .toggler:checked ~ div div .menu {
-  visibility: visible;
   left: 0;
+  visibility: visible;
 }
 
 header .toggler:checked ~ div .hamburger .hamburger--bar {
@@ -295,16 +316,16 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .home a {
-  text-decoration: none;
   font-size: 1rem;
+  text-decoration: none;
 }
 
 .home .button {
   color: white;
   border: none;
+  margin-left: 4.5vh;
   border-radius: 0.7vh;
   background-color: #a8a6a6;
-  margin-left: 4.5vh;
 }
 
 .home .button:focus {
@@ -315,7 +336,6 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 
 .home .button--state-success {
   color: white;
-  max-width: 300px;
   background-color: #52a752;
 }
 
@@ -340,8 +360,8 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: center;
   padding: 2vh;
+  text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-orient: vertical;
@@ -356,9 +376,11 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 
 .home .home--content .home--content-buttons {
   margin-top: 15vh;
+  width: 100%;
 }
 
 .home .home--content .home--content-buttons button {
+  border: 1px solid pink;
   width: 25vh;
   border: none;
   background-color: rgba(255, 255, 255, 0);
@@ -394,9 +416,9 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .sectionDivider i {
+  color: black;
   margin-top: -3vh;
   text-decoration: none;
-  color: black;
 }
 
 .projects {
@@ -416,19 +438,17 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .projects h1 {
-  text-align: center;
   width: 87%;
   margin: 0 auto;
   padding: 2vh;
-  letter-spacing: 1vh;
   font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 1vh;
   -webkit-box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
           box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
 }
 
 .projects .projects--content {
-  padding-top: 4vh;
-  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -436,28 +456,30 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
   -webkit-box-direction: normal;
       -ms-flex-flow: wrap row;
           flex-flow: wrap row;
+  text-align: center;
+  padding-top: 4vh;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  -ms-flex-line-pack: distribute;
-      align-content: space-around;
 }
 
 .projects .projects--content ul {
-  list-style-type: none;
   width: 87%;
+  list-style-type: none;
 }
 
 .projects .projects--content ul li {
   width: 100%;
-  margin-bottom: 5vh;
   -webkit-box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
           box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
+  margin-bottom: 5vh;
 }
 
 .projects .projects--content ul li a {
-  text-decoration: none;
   color: black;
+  text-decoration: none;
 }
 
 .projects .projects--content ul li a img {
@@ -465,14 +487,14 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .projects .projects--content ul li a h4 {
-  text-align: left;
-  letter-spacing: 1vh;
-  font-size: 1.5rem;
-  background-color: #fff;
   color: black;
-  padding-left: 10%;
   width: 100%;
   height: 10%;
+  font-size: 1.5rem;
+  text-align: left;
+  padding-left: 10%;
+  letter-spacing: 1vh;
+  background-color: #fff;
 }
 
 .tools {
@@ -485,17 +507,17 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .tools h1 {
-  text-align: center;
   width: 87%;
   margin: 0 auto;
-  padding: 2vh;
-  letter-spacing: 1vh;
   border: 1vh solid white;
+  padding: 2vh;
   font-size: 3rem;
-  font-weight: bolder;
-  border-radius: 3vh;
   -webkit-animation: headingAnimation 10s infinite alternate ease-in-out;
           animation: headingAnimation 10s infinite alternate ease-in-out;
+  text-align: center;
+  font-weight: bolder;
+  border-radius: 3vh;
+  letter-spacing: 1vh;
 }
 
 @-webkit-keyframes headingAnimation {
@@ -566,18 +588,18 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .tools .tools--content .htmlIcon {
-  -webkit-animation: htmlAnimation infinite 5.2s alternate ease-in-out;
-          animation: htmlAnimation infinite 5.2s alternate ease-in-out;
+  -webkit-animation: htmlAnimation infinite 10.2s alternate ease-in-out;
+          animation: htmlAnimation infinite 10.2s alternate ease-in-out;
 }
 
 .tools .tools--content .cssIcon {
-  -webkit-animation: cssAnimation infinite 5s alternate ease-in-out;
-          animation: cssAnimation infinite 5s alternate ease-in-out;
+  -webkit-animation: cssAnimation infinite 8s alternate ease-in-out;
+          animation: cssAnimation infinite 8s alternate ease-in-out;
 }
 
 .tools .tools--content .jsIcon {
-  -webkit-animation: jsAnimation infinite 5.1s alternate ease-in-out;
-          animation: jsAnimation infinite 5.1s alternate ease-in-out;
+  -webkit-animation: jsAnimation infinite 13.1s alternate ease-in-out;
+          animation: jsAnimation infinite 13.1s alternate ease-in-out;
 }
 
 @-webkit-keyframes htmlAnimation {
@@ -693,14 +715,14 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .about h1 {
-  text-align: center;
   width: 87%;
+  border: 1vh solid white;
   margin: 0 auto;
   padding: 2vh;
-  letter-spacing: 1vh;
-  border: 1vh solid white;
   font-size: 3rem;
+  text-align: center;
   font-weight: bolder;
+  letter-spacing: 1vh;
 }
 
 .about .about--content {
@@ -726,16 +748,16 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .contact h1 {
-  text-align: center;
   width: 40vh;
+  border: 1vh solid white;
   margin: 0 auto;
   padding: 1vh;
-  letter-spacing: 1vh;
-  border: 1vh solid white;
-  border-radius: 3vh;
-  background-color: rgba(255, 255, 255, 0.788);
   font-size: 3rem;
+  text-align: center;
   font-weight: bolder;
+  border-radius: 3vh;
+  letter-spacing: 1vh;
+  background-color: rgba(255, 255, 255, 0.788);
 }
 
 .contact form {
@@ -805,9 +827,9 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .contact .button--state-success:focus {
-  outline-style: none;
   -webkit-animation: focusAnimation forwards 0.5s ease-in-out;
           animation: focusAnimation forwards 0.5s ease-in-out;
+  outline-style: none;
 }
 
 .contact .icon {
