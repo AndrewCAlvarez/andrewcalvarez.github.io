@@ -168,7 +168,7 @@ header {
                     &::before {
                         left: 0;
                         width: 100%;
-                        bottom: 0;
+                        bottom: 2vh;
                         height: 2px;
                         content: "";
                         position: absolute;
@@ -346,14 +346,15 @@ header {
 
         ul {
             display: flex;
-            flex-flow: wrap row;
+            flex-flow: row wrap;
             text-align: center;
             align-content: center;
             justify-content: space-evenly;
-            width: 87%;
+            width: 100%;
             list-style-type: none;
 
             li {
+                padding: 5%;
                 width: 100%;
                 box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
                 margin-bottom: 5vh;
@@ -602,10 +603,9 @@ header {
             flex-flow: row wrap;
             align-content: space-around;
             justify-content: center;
-
             width: 100%;
             i {
-                width: 10vh;
+                width: 20vw;
                 font-size: 6rem;
                 color: rgb(11, 214, 221);
                 animation: iconsAnimation--hovering 1s infinite
@@ -766,7 +766,6 @@ footer {
 @media only screen and (min-width: 568px) and (max-width: 767px) {
     header {
         div {
-            border: 1px solid red;
             width: 5%;
             height: 10vh;
             margin-right: -10vw;
@@ -777,8 +776,6 @@ footer {
     }
     .contact {
         .contact--content {
-            h1 {
-            }
             input {
                 width: 100vh;
             }
@@ -788,8 +785,6 @@ footer {
             button {
                 width: 100vh;
             }
-        }
-        .button--state-success {
         }
     }
 }
@@ -869,7 +864,7 @@ footer {
                         &::before {
                             left: 0;
                             width: 100%;
-                            bottom: 35px;
+                            bottom: 2vh;
                             height: 2px;
                             content: "";
                             position: absolute;

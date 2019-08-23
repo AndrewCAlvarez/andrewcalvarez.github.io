@@ -254,7 +254,7 @@ header .menu ul li a {
 header .menu ul li a::before {
   left: 0;
   width: 100%;
-  bottom: 0;
+  bottom: 2vh;
   height: 2px;
   content: "";
   position: absolute;
@@ -495,19 +495,20 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: wrap row;
-          flex-flow: wrap row;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  width: 87%;
+  width: 100%;
   list-style-type: none;
 }
 
 .projects .projects--content ul li {
+  padding: 5%;
   width: 100%;
   -webkit-box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
           box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
@@ -904,7 +905,7 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .about .about--content .about--content-icons i {
-  width: 10vh;
+  width: 20vw;
   font-size: 6rem;
   color: #0bd6dd;
   animation: iconsAnimation--hovering 1s infinite alternate-reverse ease-in-out, iconsAnimation--color 30s infinite alternate-reverse ease-in-out;
@@ -1101,7 +1102,6 @@ footer .footer--icon a {
 
 @media only screen and (min-width: 568px) and (max-width: 767px) {
   header div {
-    border: 1px solid red;
     width: 5%;
     height: 10vh;
     margin-right: -10vw;
@@ -1216,7 +1216,7 @@ footer .footer--icon a {
   header .menu ul li a::before {
     left: 0;
     width: 100%;
-    bottom: 35px;
+    bottom: 2vh;
     height: 2px;
     content: "";
     position: absolute;
