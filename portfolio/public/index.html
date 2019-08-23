@@ -1,65 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/6.4.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/6.4.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/6.4.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/6.4.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/6.4.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
-
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
+    <script src="https://kit.fontawesome.com/86840570f2.js"></script>
+    <title>Andrew C Alvarez</title>
   </head>
   <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <header>
+      <h4 class="logo"><a href="#home">Andrew C Alvarez</a></h4>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      <input type="checkbox" class="toggler" />
+      <div>
+        <div class="hamburger"><div class="hamburger--bar"></div></div>
+        <div>
+          <div class="menu">
+            <ul>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#tools">Tools</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li>
+                <a
+                  href="https://github.com/AndrewCAlvarez/andrewcalvarez.github.io"
+                  >Github</a
+                >
+              </li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
 
-        try {
-          let app = firebase.app();
-          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
-          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
+    <section class="home" id="home">
+      <div class="home--content">
+        <div class="home--content-text">
+            <h1>Simple, Clean, Effective</h1>
+            <p>
+              If you're expanding a business, building a blog, or representing your brand, my services are here to help you thrive.
+            </p>
+        </div>
+        <div class="home--content-buttons">
+          <button>
+            <a href="#contact" class="button button--state-success">Let's Talk</a>
+          </button>
+          <button><a href="#projects" class="button">Learn More</a></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="sectionDivider">
+        <a href="#projects"><i class="fas fa-angle-double-down"></i></a>
+      </div>
+
+      <h1>Project Showcase</h1>
+      <div class="projects--content">
+        <ul>
+          <li>
+            <a href="/projects/catering_template/index.html">
+              <img src="/images/cateringScreenshot.png" alt="" />
+              <h4>Catering Co.</h4></a
+            >
+          </li>
+          <li>
+            <a href="/projects/festival_template/index.html">
+              <img src="/images/festivalScreenshot.png" alt="" />
+              <h4>Festival</h4></a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="tools" id="tools">
+      <div class="tools--content">
+        <h1>Tools</h1>
+        <ul>
+          <li><i class="fab fa-html5 htmlIcon"></i></li>
+          <li><i class="fab fa-css3-alt cssIcon"></i></li>
+          <li><i class="fab fa-js-square jsIcon"></i></li>
+        </ul>
+        <div class="tools--extraContent">
+          <div class="bar--animation"><i class="fas fa-dot-circle"></i></div>
+            <i class="fab fa-github-alt"></i>
+            <i class="fab fa-sass"></i>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about--content">
+        <div class="about--content-icons">
+            <i class="fas fa-people-carry"></i>
+            <i class="fas fa-female"></i>
+            <i class="fas fa-magnet"></i>
+            <i class="fas fa-wrench"></i>
+            <i class="fas fa-globe-americas"></i>
+        </div>
+        <div class="about--content-bio">
+            <h1>About Me</h1>
+            <img src="/images/guyLookingAway.png" alt="" />
+            <p>
+              I am a freelance web developer who loves creating simple solutions to difficult problems. Simple problems with simple solutions are fun too.
+            </p>
+        </div>
+        <div class="about--content-icons">
+            <i class="fas fa-hammer"></i>
+            <i class="fas fa-toolbox"></i>
+            <i class="fas fa-screwdriver"></i>
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-user-astronaut"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact--content">
+          <h1>Contact</h1>
+          <form>
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Email" />
+            <textarea placeholder="Message"></textarea>
+            <button type="submit" class="button--state-success">SEND</button>
+          </form>
+
+      </div>
+    </section>
+    <footer>
+        <div class="footer--icon">
+            <a href="https://github.com/AndrewCAlvarez/andrewcalvarez.github.io"
+              ><i class="fab fa-github"></i
+            ></a>
+          </div>
+    </footer>
   </body>
 </html>

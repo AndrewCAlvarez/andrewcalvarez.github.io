@@ -1101,6 +1101,7 @@ footer .footer--icon a {
 
 @media only screen and (min-width: 568px) and (max-width: 767px) {
   header div {
+    border: 1px solid red;
     width: 5%;
     height: 10vh;
     margin-right: -10vw;

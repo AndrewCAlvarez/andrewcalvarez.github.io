@@ -1,0 +1,300 @@
+// As hex codes */
+
+$color-primary-0: #670000; // Main Primary color */
+$color-primary-1: #410202;
+$color-primary-2: #4f0000;
+$color-primary-3: #9b0000;
+$color-primary-4: #d30000;
+
+$color-secondary-1-0: #672e00; // Main Secondary color (1) */
+$color-secondary-1-1: #411e02;
+$color-secondary-1-2: #4f2400;
+$color-secondary-1-3: #9b4600;
+$color-secondary-1-4: #d36000;
+
+$color-secondary-2-0: #52002f; // Main Secondary color (2) */
+$color-secondary-2-1: #34011e;
+$color-secondary-2-2: #3f0024;
+$color-secondary-2-3: #7c0046;
+$color-secondary-2-4: #a90060;
+
+@mixin flex-center {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  grid-auto-rows: minmax(126px, auto);
+
+  font-size: 1vh;
+  background-image: linear-gradient(
+    $color-secondary-2-0,
+    $color-secondary-2-1,
+    $color-secondary-2-2,
+    $color-secondary-2-3,
+    $color-secondary-2-4
+  );
+  font-family: "Merriweather", serif;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  height: 5vh;
+  z-index: 1;
+  background-color: $color-secondary-2-4;
+  .toggler {
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+  }
+  //after toggle is checked, rotate
+  .toggler:checked + .hamburger > div {
+    transform: rotate(135deg);
+  }
+  //this creates the "x"
+  .toggler:checked + .hamburger > div::before,
+  .toggler:checked + .hamburger > div::after {
+    top: 0;
+    transform: rotate(90deg);
+  }
+
+  //this toggles the menu
+  .toggler:checked ~ .menu {
+    transform: scale(1);
+  }
+
+  //creates the bars for the hamburger menu
+  .hamburger {
+    width: 5vh;
+    padding: 0px;
+    z-index: 2;
+
+    div {
+      position: relative;
+      width: 100%;
+      height: 0.5vh;
+      background-color: white;
+      top: 2.2vh;
+      left: 1vh;
+      transition: all 0.4s ease;
+    }
+    div::before,
+    div::after {
+      content: "";
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      background-color: inherit;
+      top: -1vh;
+    }
+
+    div::after {
+      top: 1vh;
+    }
+  }
+
+  .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    line-height: 3rem;
+    background-color: #34011e94;
+    transform: scale(0);
+    transition: all 0.4s ease;
+    div {
+      ul li {
+        color: white;
+        list-style: none;
+        text-align: center;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.logo {
+  display: block;
+  margin: 6vh auto 10% auto;
+  grid-area: 1/1/2/2;
+  color: white;
+
+  img {
+    width: 87%;
+    max-width: 400px;
+  }
+  div {
+    text-align: center;
+  }
+}
+
+main {
+  @include flex-center();
+
+  grid-area: 2/1/3/2;
+  color: white;
+
+  .main-content {
+    width: 87%;
+    margin-bottom: 3%;
+    max-width: 420px;
+    max-height: 300px;
+    border: 2px solid $color-secondary-1-4;
+    text-align: center;
+    background-color: $color-secondary-2-4;
+    text-decoration: none;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+
+  img {
+    width: 100%;
+    max-height: 250px;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 2px solid $color-secondary-1-4;
+  }
+}
+
+.tickets-section {
+  @include flex-center();
+  grid-area: 3 / 1 / 4 / 2;
+  color: white;
+  text-align: center;
+
+  .ticket-option {
+    background-color: $color-secondary-2-3;
+    margin-bottom: 3%;
+    width: 87%;
+    max-width: 420px;
+    max-height: 320px;
+    text-align: center;
+    div {
+      @include flex-center();
+      flex-direction: column;
+      font-size: 1rem;
+      height: 20vh;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+  }
+
+  .vip-ticket-option {
+    ul {
+      border-top: 1.5px solid $color-secondary-2-2;
+      list-style: none;
+      font-size: 0.5rem;
+      width: 100%;
+    }
+  }
+
+  .buy-button {
+    background-color: $color-secondary-1-4;
+    border-top: 3px solid $color-primary-1;
+    width: 100%;
+    max-width: 420px;
+    height: 5vh;
+    @include flex-center();
+  }
+  .all-ticket-options-button {
+    background-color: $color-secondary-1-4;
+    margin-bottom: 3%;
+    width: 87%;
+    max-width: 700px;
+    height: 5vh;
+    @include flex-center();
+  }
+}
+
+.social-media-section {
+  grid-area: 4 / 1 / 5 / 2;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  grid-area: 6 / 1 / 7 / 2;
+  color: white;
+  text-align: center;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .logo {
+    width: 55%;
+    max-width: 200px;
+  }
+  .fab {
+    background-color: $color-secondary-1-4;
+    width: 5vh;
+    height: 5vh;
+    font-size: 2rem;
+    color: white;
+    border-radius: 50%;
+    @include flex-center();
+  }
+  .fab:hover {
+    background-color: $color-secondary-2-3;
+  }
+
+  .social-media-container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-content: center;
+    a {
+      text-decoration: none;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
