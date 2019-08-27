@@ -1,0 +1,931 @@
+.button {
+    color: white;
+    border: 1px solid rgba(207, 205, 205, 0.541);
+    padding: 1em;
+    border-radius: 0.7vh;
+    background-color: rgba(168, 166, 166, 0.74);
+}
+
+.button:focus {
+    animation: focusAnimation forwards 0.5s ease-in-out;
+    outline-style: none;
+}
+
+.button--state-success {
+    color: white;
+    padding: 1em 1.5em;
+    background-color: rgb(82, 167, 82);
+}
+
+.button--state-danger {
+    color: white;
+    background-color: rgb(218, 115, 115);
+}
+
+.button--state-danger:focus {
+    animation: dangerAnimation forwards 0.1s ease-in-out;
+}
+
+@keyframes focusAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes dangerAnimation {
+    0% {
+        transform: rotate(5deg);
+    }
+    25% {
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: roatate(0deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+//Modules added are above
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    z-index: 5;
+    position: fixed;
+    flex-flow: wrap;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.39);
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.938);
+
+    div {
+        width: 15%;
+        height: 10vh;
+
+        .hamburger {
+            width: 100%;
+            height: 10vh;
+            display: flex;
+            padding-right: 1vh;
+            justify-content: center;
+
+            .hamburger--bar {
+                top: 2vh;
+                width: 100%;
+                height: 10%;
+                position: relative;
+                transition: all 0.4s ease;
+                background-color: black;
+
+                &:after {
+                    top: 2vh;
+                    width: 100%;
+                    height: 100%;
+                    content: "";
+                    position: absolute;
+                    transition: all 0.8s ease;
+                    background-color: inherit;
+                }
+                &:before {
+                    top: 4vh;
+                    width: 100%;
+                    height: 100%;
+                    content: "";
+                    position: absolute;
+                    transition: all 0.4s ease;
+                    background-color: inherit;
+                }
+            }
+        }
+    }
+
+    .logo {
+        width: 85%;
+        height: 100%;
+
+        a {
+            color: black;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: column nowrap;
+            font-size: 1.5rem;
+            text-align: left;
+            font-weight: bold;
+            margin-left: 2%;
+            align-content: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+    }
+
+    .menu {
+        left: 100%;
+        order: 3;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        position: absolute;
+        font-size: 1.5rem;
+        transition: all 0.1s ease;
+        text-align: center;
+        transition: all 0.4s ease;
+        line-height: 10vh;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgba(11, 179, 221, 0.822);
+
+        ul {
+            font-weight: bolder;
+            list-style-type: none;
+
+            li {
+                a {
+                    color: white;
+                    position: relative;
+                    text-decoration: none;
+                    &::before {
+                        left: 0;
+                        width: 100%;
+                        bottom: 2vh;
+                        height: 2px;
+                        content: "";
+                        position: absolute;
+                        transform: scaleX(0);
+                        transition: all 0.3s ease-in-out;
+                        background-color: #fff;
+                    }
+                    &:hover:before {
+                        transform: scaleX(1);
+                    }
+                }
+            }
+        }
+    }
+
+    .toggler {
+        left: 83%;
+        width: 10vh;
+        height: 10vh;
+        z-index: 2;
+        opacity: 0;
+        position: absolute;
+    }
+
+    .toggler:checked ~ div div .menu {
+        left: 0;
+    }
+
+    .toggler:checked ~ div .hamburger .hamburger--bar {
+        top: 4vh;
+        transform: rotate(-135deg);
+    }
+
+    .toggler:checked ~ div .hamburger .hamburger--bar::after {
+        top: 0vh;
+        left: 0vh;
+        opacity: 0;
+        transform: rotate(-5deg);
+    }
+    .toggler:checked ~ div .hamburger .hamburger--bar::before {
+        top: 0vh;
+        left: 0vh;
+        transform: rotate(90deg);
+    }
+}
+
+.home {
+    //Parallax image
+    background-image: url(https://images.pexels.com/photos/436784/pexels-photo-436784.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    //Set a height
+    height: 80vh;
+    //Create parallax effect
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    .home--content {
+        color: white;
+        height: 80vh;
+        display: flex;
+        padding: 2vh;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.377);
+
+        .home--content-text {
+            margin: 0 auto;
+            text-align: center;
+            max-width: 320px;
+        }
+
+        .home--content-buttons {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            align-content: center;
+            margin-top: 10vh;
+
+            a {
+                font-size: 1rem;
+                text-decoration: none;
+            }
+
+            .button {
+                color: white;
+                border: none;
+                border-radius: 0.7vh;
+                margin: 0 auto;
+                background-color: rgb(168, 166, 166);
+            }
+
+            .button:focus {
+                animation: focusAnimation forwards 0.5s ease-in-out;
+                outline-style: none;
+            }
+
+            .button--state-success {
+                background-color: rgb(82, 167, 82);
+            }
+
+            @keyframes focusAnimation {
+                0% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(0.8);
+                }
+                100% {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+.projects {
+    display: flex;
+    padding-top: 3vh;
+    align-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .sectionDivider {
+        width: 10vh;
+        height: 10vh;
+        border: 1px solid white;
+        display: flex;
+        margin: -7vh auto 7vh auto;
+        font-size: 5vh;
+        text-align: center;
+        align-content: center;
+        border-radius: 50% 50%;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #fff;
+
+        a {
+            position: relative;
+            animation: upDownAnimation infinite alternate ease-out 1s;
+            i {
+                color: black;
+                margin-top: -3vh;
+                text-decoration: none;
+            }
+        }
+        @keyframes upDownAnimation {
+            from {
+                top: -2vh;
+            }
+            to {
+                top: 0vh;
+            }
+        }
+    }
+
+    h1 {
+        max-width: 800px;
+        width: 87%;
+        margin: 0 auto;
+        padding: 2vh;
+        font-size: 1.5rem;
+        text-align: center;
+        letter-spacing: 1vh;
+        box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
+    }
+
+    .projects--content {
+        padding-top: 4vh;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-content: center;
+
+        ul {
+            display: flex;
+            flex-flow: row wrap;
+            text-align: center;
+            align-content: center;
+            justify-content: space-evenly;
+            width: 100%;
+            list-style-type: none;
+
+            li {
+                padding: 5%;
+                width: 100%;
+                box-shadow: 0vh 2px 5px rgba(0, 0, 0, 0.274);
+                margin-bottom: 5vh;
+
+                a {
+                    color: black;
+                    text-decoration: none;
+
+                    img {
+                        width: 100%;
+                    }
+
+                    h4 {
+                        color: black;
+                        width: 100%;
+                        height: 10%;
+                        font-size: 1.5rem;
+                        text-align: left;
+                        padding-left: 10%;
+                        letter-spacing: 1vh;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tools {
+    //Parallax image
+    background-image: url(https://images.pexels.com/photos/273222/pexels-photo-273222.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    //Set a height
+    height: 100%;
+    //Create parallax effect
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-content: space-around;
+
+    .tools--content {
+        padding-top: 12vh;
+        background-color: rgba(11, 179, 221, 0.767);
+        height: 60%; //height needs to be adjusted here and in the background image for parallax
+        color: white;
+        display: flex;
+        text-align: center;
+        align-content: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        h1 {
+            width: 87%;
+            max-width: 40%;
+            margin: 0 auto;
+            border: 1vh solid white;
+            padding: 2vh;
+            font-size: 2rem;
+            animation: headingAnimation 2s infinite alternate ease-in-out;
+            text-align: center;
+            font-weight: bolder;
+            border-radius: 3vh;
+            letter-spacing: 1vh;
+        }
+
+        @keyframes headingAnimation {
+            0% {
+                border-radius: 10vh;
+            }
+            20% {
+                border-radius: 10vh;
+            }
+            40% {
+                border-radius: 7vh 7vh;
+            }
+            60% {
+                border-radius: 7vh 7vh;
+            }
+            80% {
+                border-radius: 10vh;
+            }
+            100% {
+                border-radius: 10.1vh;
+            }
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            align-content: center;
+            height: 60%;
+            padding: 5vh 5vh 7vh 5vh;
+            li {
+                width: 40%;
+                max-width: 320px;
+                i {
+                    font-size: 10em;
+                }
+                .htmlIcon {
+                    animation: htmlAnimation infinite 10.2s alternate
+                        ease-in-out;
+                }
+                .cssIcon {
+                    animation: cssAnimation infinite 8s alternate ease-in-out;
+                }
+                .jsIcon {
+                    animation: jsAnimation infinite 13.1s alternate ease-in-out;
+                }
+                @keyframes htmlAnimation {
+                    0% {
+                        color: white;
+                    }
+                    20% {
+                        color: white;
+                    }
+                    40% {
+                        color: white;
+                    }
+                    60% {
+                        color: white;
+                    }
+                    100% {
+                        color: tomato;
+                    }
+                }
+                @keyframes cssAnimation {
+                    0% {
+                        color: white;
+                    }
+                    20% {
+                        color: white;
+                    }
+                    40% {
+                        color: white;
+                    }
+                    60% {
+                        color: white;
+                    }
+                    100% {
+                        color: dodgerblue;
+                    }
+                }
+                @keyframes jsAnimation {
+                    0% {
+                        color: white;
+                    }
+                    20% {
+                        color: white;
+                    }
+                    40% {
+                        color: white;
+                    }
+                    60% {
+                        color: white;
+                    }
+                    100% {
+                        color: orange;
+                    }
+                }
+            }
+        }
+
+        .tools--extraContent {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-content: center;
+            //this is the dashed line and animation separating html,css,js and every other tool
+            border-top: 1vh dashed white;
+            height: 100%;
+            .bar--animation {
+                width: 100%;
+                height: 1vh;
+                i {
+                    position: relative;
+                    left: -50%;
+                    top: -12%;
+                    font-size: 1rem;
+                    background-color: rgba(255, 255, 255, 0);
+                    animation: toolsDividerAnimation infinite alternate-reverse
+                        6s cubic-bezier(1, 1, 1, 1);
+                }
+                @keyframes toolsDividerAnimation {
+                    0% {
+                        left: 40%;
+                        transform: rotateZ(180deg);
+                    }
+
+                    100% {
+                        left: 20%;
+                        transform: rotateZ(90deg);
+                    }
+                }
+            }
+
+            i {
+                font-size: 5rem;
+                padding: 5vh 2vh;
+            }
+        }
+    }
+}
+
+.about {
+    padding-top: 5vh;
+
+    .about--content {
+        margin: 0 auto;
+        padding: 5vh;
+        text-align: center;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-content: center;
+
+        .about--content-bio {
+            max-width: 500px;
+
+            h1 {
+                width: 87%;
+                margin: 0 auto;
+                padding: 2vh;
+                font-size: 3rem;
+                text-align: center;
+                font-weight: bolder;
+                letter-spacing: 1vh;
+            }
+
+            p {
+                font-size: 2rem;
+            }
+
+            img {
+                width: 40vh;
+                height: auto;
+                border-radius: 50% 50%;
+            }
+        }
+
+        .about--content-icons {
+            display: none;
+            flex-flow: row wrap;
+            align-content: space-around;
+            justify-content: center;
+            width: 100%;
+            i {
+                width: 20vw;
+                font-size: 6rem;
+                color: rgb(11, 214, 221);
+                animation: iconsAnimation--hovering 1s infinite
+                        alternate-reverse ease-in-out,
+                    iconsAnimation--color 30s infinite alternate-reverse
+                        ease-in-out;
+            }
+
+            @keyframes iconsAnimation--color {
+                from {
+                    color: rgb(11, 214, 221);
+                }
+                to {
+                    color: rgb(117, 89, 218);
+                }
+            }
+
+            @keyframes iconsAnimation--hovering {
+                from {
+                    transform: scale(1.009);
+                }
+                to {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    //Parallax image
+    background-image: url(https://images.pexels.com/photos/2303781/pexels-photo-2303781.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    //Set a height
+    height: 80vh;
+    //Create parallax effect
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+
+    text-align: center;
+    padding-top: 10vh;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+
+    .contact--content {
+        width: 87%;
+        max-width: 600px;
+        h1 {
+            width: 100%;
+            padding: 1vh;
+            font-size: 1.3rem;
+            text-align: center;
+            border-radius: 1vh;
+            letter-spacing: 1vh;
+            background-color: rgb(255, 255, 255);
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding-top: 2vh;
+            flex-direction: column;
+            justify-content: center;
+
+            input {
+                width: 100%;
+                color: rgb(116, 181, 197);
+                border: none;
+                padding: 1vh;
+                font-size: 1rem;
+                border-radius: 1vh;
+                margin-bottom: 3vh;
+                background-color: rgb(255, 255, 255);
+                transition: all 0.3s ease;
+
+                &:focus {
+                    outline: none;
+                    background-color: rgba(255, 255, 255, 0.904);
+                }
+            }
+
+            textarea {
+                color: rgb(116, 181, 197);
+                width: 100%;
+                min-height: 10vh;
+                border: none;
+                height: 5vh;
+                resize: none;
+                padding: 1vh;
+                font-family: "Nunito", sans-serif;
+                font-size: 1rem;
+                transition: all 0.3s ease;
+                border-radius: 1vh;
+                margin-bottom: 3vh;
+
+                &:focus {
+                    outline: none;
+                    height: 20vh;
+                    background-color: rgba(255, 255, 255, 0.904);
+                }
+            }
+
+            button {
+                width: 100%;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .button--state-success {
+        color: white;
+        border: none;
+        padding: 1em;
+        width: 100%;
+        max-width: 600px;
+        border-radius: 0.7vh;
+    }
+
+    .button--state-success:focus {
+        animation: focusAnimation forwards 0.5s ease-in-out;
+        outline-style: none;
+    }
+
+    .icon {
+        width: 4rem;
+        height: 4rem;
+        margin: 13vh auto 0;
+    }
+}
+
+footer {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-flow: row nowrap;
+
+    align-content: center;
+
+    .footer--icon {
+        margin: auto;
+        font-size: 2rem;
+        a {
+            color: #6e5494;
+            font-size: 4rem;
+            margin-top: -1.4px;
+            text-decoration: none;
+        }
+    }
+}
+
+////////////////////////////////////////////   @MEDIA RULES ////////////////////////////////////////////
+
+@media only screen and (min-width: 568px) and (max-width: 767px) {
+    header {
+        div {
+            width: 5%;
+            height: 10vh;
+            margin-right: -10vw;
+        }
+        .toggler {
+            left: 90%;
+        }
+    }
+    .contact {
+        .contact--content {
+            input {
+                width: 100vh;
+            }
+            textarea {
+                width: 100vh;
+            }
+            button {
+                width: 100vh;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    header {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        z-index: 5;
+        position: fixed;
+        flex-flow: row nowrap;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.39);
+        flex-direction: row;
+        background-color: rgba(255, 255, 255, 0.938);
+
+        .toggler {
+            display: none;
+        }
+
+        div {
+            width: 15%;
+            height: 10vh;
+
+            .hamburger {
+                display: none;
+            }
+        }
+
+        .logo {
+            width: 30%;
+            height: 100%;
+
+            a {
+                color: black;
+                display: flex;
+                font-size: 1.5rem;
+                padding-left: 2%;
+                align-content: center;
+                flex-direction: column;
+                justify-content: center;
+                text-decoration: none;
+            }
+        }
+
+        .menu {
+            left: 30vw;
+            order: 2;
+            width: 70%;
+            height: 10vh;
+            position: absolute;
+            font-size: 1.5rem;
+            transition: all 0.1s ease;
+            text-align: center;
+            transition: all 0.4s ease;
+            line-height: 10vh;
+            background-color: rgba(255, 255, 255, 0);
+
+            ul {
+                display: flex;
+                overflow: hidden;
+                flex-flow: row nowrap;
+                font-weight: bolder;
+                padding-right: 2%;
+                justify-content: flex-end;
+                list-style-type: none;
+
+                li {
+                    float: left;
+                    padding-left: 2vw;
+                    a {
+                        color: black;
+                        display: block;
+                        position: relative;
+                        text-decoration: none;
+                        //psuedo elements below are for the underline animations
+                        &::before {
+                            left: 0;
+                            width: 100%;
+                            bottom: 2vh;
+                            height: 2px;
+                            content: "";
+                            position: absolute;
+                            transform: scaleX(0);
+                            transition: all 0.3s ease-in-out;
+                            background-color: rgb(0, 0, 0);
+                        }
+                        &:hover:before {
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
+        }
+
+        .toggler {
+            left: 83%;
+            width: 10vh;
+            height: 10vh;
+            z-index: 2;
+            opacity: 0;
+            position: absolute;
+        }
+
+        .toggler:checked ~ div div .menu {
+            left: 0;
+        }
+
+        .toggler:checked ~ div .hamburger .hamburger--bar {
+            top: 4vh;
+            transform: rotate(-135deg);
+        }
+
+        .toggler:checked ~ div .hamburger .hamburger--bar::after {
+            top: 0vh;
+            left: 0vh;
+            opacity: 0;
+            transform: rotate(-5deg);
+        }
+        .toggler:checked ~ div .hamburger .hamburger--bar::before {
+            top: 0vh;
+            left: 0vh;
+            transform: rotate(90deg);
+        }
+    }
+
+    .projects {
+        .projects--content {
+            ul {
+                li {
+                    max-width: 328px;
+                }
+            }
+        }
+    }
+
+    .about {
+        .about--content {
+            .about--content-icons {
+                display: flex;
+            }
+        }
+    }
+}
