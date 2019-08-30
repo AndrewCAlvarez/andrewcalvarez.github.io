@@ -1,0 +1,25 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#bar--container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+
+    div {
+        width: 5px;
+
+        background-color: dodgerblue;
+    }
+}
