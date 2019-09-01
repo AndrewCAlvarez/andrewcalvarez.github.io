@@ -57,7 +57,7 @@ var bubbleSort = array => {
                     }
                 }
             }
-        }, 250);
+        }, 50);
 
         if (!swapMade) {
             sorted = true;
