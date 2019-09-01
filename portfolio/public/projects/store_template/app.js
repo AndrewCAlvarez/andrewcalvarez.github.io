@@ -9,28 +9,57 @@ document.addEventListener("DOMContentLoaded", function(event) {
     }
 
     {
+        /*
+            click menu
+            animates into an x
+        */
+
         //menu functionality
-        let elem = document.getElementById("hamburger");
-        let change = 0.1;
         let toggled = false;
-        elem.onclick = function() {
+        document.getElementById("hamburger").onclick = function() {
+            if (!toggled) toggled = true;
+            else toggled = false;
+            console.log(toggled);
+            animate_hamburger_menu(toggled);
+        };
+
+        function animate_hamburger_menu(toggled) {
             const time = {
                 start: null,
-                total: 2000
+                total: 3000
             };
+            var current_time = Date.now();
 
-            const tick = now => {
+            function tick(current_time) {
                 if (!time.start) {
-                    time.start = now;
+                    time.start = current_time;
                 }
-                time.elapsed = now - time.start;
+                time.elapsed = current_time - time.start;
                 if (time.elapsed < time.total) {
-                    elem.style.transform = "scale(" + change + ")";
-                    change = change + 0.1;
+                    //Animation goes here
+                    select_hamburger_animation(toggled);
                     requestAnimationFrame(tick);
                 }
-            };
+            }
             requestAnimationFrame(tick);
-        };
+        }
+
+        function select_hamburger_animation(toggled) {
+            if (toggled) {
+                animate_hamburger_start();
+            } else {
+                animate_hamburger_end();
+            }
+        }
+
+        function animate_hamburger_start() {
+            document.getElementById("hamburger--bar1").style.transform =
+                "scale(1.2)";
+        }
+
+        function animate_hamburger_end() {
+            document.getElementById("hamburger--bar1").style.transform =
+                "scale(.5)";
+        }
     }
 });

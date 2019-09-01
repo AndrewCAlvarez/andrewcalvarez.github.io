@@ -91,7 +91,7 @@ header .toggler {
   width: 6.9vh;
   margin-left: 1.8%;
   z-index: 5;
-  opacity: 0;
+  opacity: 1;
   display: none;
 }
 
@@ -110,8 +110,6 @@ header nav .hamburger div {
   position: relative;
   border-radius: 5px;
   margin-bottom: 1vh;
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
 }
 
 main {
