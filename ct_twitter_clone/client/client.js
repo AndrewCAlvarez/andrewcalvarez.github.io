@@ -1,8 +1,11 @@
 const form = document.querySelector("form");
 const loadingElement = document.querySelector(".loading");
+const mewsElement = document.querySelector(".mews");
 const API_URL = "http://localhost:5000/mews"; //a variable to store the address of the server that we are making requests to
 
 loadingElement.style.display = "none";
+
+listAllMews();
 
 form.addEventListener("submit", event => {
     event.preventDefault();
@@ -36,6 +39,44 @@ form.addEventListener("submit", event => {
     })
         .then(response => response.json())
         .then(createdMew => {
-            console.log("an");
+            //This part gave me a lot of trouble. I didnt have mongodb running on mycomputer. To solve this be sure to have mongodb running alongside the server(s)
+            form.reset();
+
+            setTimeout(() => {
+                form.style.display = "";
+            }, 10000);
+            listAllMews();
+            loadingElement.style.display = "none";
         });
 });
+
+function listAllMews() {
+    mewsElement.innerHTML = "";
+    fetch(API_URL)
+        //requests the all the mews in the array
+        .then(response => response.json())
+        .then(mews => {
+            mews.reverse();
+            mews.forEach(mew => {
+                //returns mews in reverse order. Newest up top in this case
+                //for every element in this array, I want to append it into the page
+                //All of this code just adds it the html page itself
+                const div = document.createElement("div");
+
+                const header = document.createElement("h3");
+                header.textContent = mew.name; //DO NOT USE .innerhtml!!!This can be abused easily by inserting actual html in the mew. Use textContent or innertext
+
+                const contents = document.createElement("p");
+                contents.textContent = mew.content;
+
+                const date = document.createElement("small");
+                date.textContent = new Date(mew.created);
+
+                div.appendChild(header);
+                div.appendChild(contents);
+                div.appendChild(date);
+
+                mewsElement.appendChild(div);
+            });
+        });
+}

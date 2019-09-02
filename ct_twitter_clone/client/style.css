@@ -22,4 +22,10 @@ main .loading img {
   height: auto;
   width: 10%;
 }
+
+main .mews {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */
