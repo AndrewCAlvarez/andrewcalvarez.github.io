@@ -1,0 +1,25 @@
+body {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header .title {
+  text-align: center;
+}
+
+main .mew-form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+main .loading {
+  text-align: center;
+}
+
+main .loading img {
+  height: auto;
+  width: 10%;
+}
+/*# sourceMappingURL=style.css.map */
