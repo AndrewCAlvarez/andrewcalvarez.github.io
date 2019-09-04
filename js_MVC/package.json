@@ -10,6 +10,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "lite-server": "^2.5.4"
+        "lite-server": "^2.5.4",
+        "mongod": "^2.0.0"
     }
 }
