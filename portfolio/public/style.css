@@ -305,7 +305,7 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .home {
-  background-image: url(https://images.pexels.com/photos/436784/pexels-photo-436784.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-image: url(https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   height: 80vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -329,13 +329,14 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: rgba(0, 0, 0, 0.377);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .home .home--content .home--content-text {
   margin: 0 auto;
   text-align: center;
   max-width: 320px;
+  border-radius: 1em 1em 0em 1em;
 }
 
 .home .home--content .home--content-buttons {
@@ -344,11 +345,11 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
   margin-top: 10vh;
