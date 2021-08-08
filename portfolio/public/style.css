@@ -888,7 +888,7 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 .about .about--content .about--content-bio img {
   width: 40vh;
   height: auto;
-  border-radius: 50% 50%;
+  border-radius: 1em;
 }
 
 .about .about--content .about--content-icons {

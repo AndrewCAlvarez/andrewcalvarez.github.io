@@ -4,9 +4,9 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   line-height: 5vh;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 h1,
@@ -15,130 +15,151 @@ h3,
 h4 {
   letter-spacing: 1vh;
 }
-
 header {
   width: 100%;
-  height: 10%;
+  height: 10vh;
+  display: flex;
+  z-index: 5;
   position: fixed;
-  left: 0;
-  top: 0;
-  background-color: #fff;
-  z-index: 1;
-  box-shadow: 0 0.1vh 0.5vh black;
-.toggler {
-      position: absolute;
-      width: 10vh;
-      height: 10vh;
-      opacity: .6;
-      z-index: 1;
-    }
-  nav {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-    align-content: center;
-    height: 100%;
-    
-    
+  flex-flow: wrap;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.39);
+  flex-direction: row;
+  background-color: rgba(255, 255, 255, 0.938);
 
-    h4 {
-      font-size: 1.5rem;
-      width: 70%;
-      margin: auto;
-      padding-left: 10px;
-      a{
-        text-decoration: none;
-        color: black;
-      }
-    }
+  div {
+    width: 15%;
+    height: 10vh;
 
     .hamburger {
-      position: absolute;
-      width: 10vh;
+      width: 100%;
       height: 10vh;
-      
-  
-      div {
-        position: absolute;
-        content:"";
-        top: 4vh;
-        width: 75%;
-        height: .7vh;
-        background-color: rgb(49, 47, 47);
-        transition: all 1s ease;
-        
-      }
-      div::before{
-        position: absolute;
-        content:"";
-        width: 100%;
-        height: inherit;
-        background-color: inherit;
-        top: -2vh;
-        transition: all 1s ease;
-      }
-      div::after{
-        position: absolute;
-        content:"";
-        width: 100%;
-        height: inherit;
-        background-color: inherit;
-        top: 2vh;
-        transition: all 1s ease;
-      }
-      
+      display: flex;
+      padding-right: 1vh;
+      justify-content: center;
 
-      input:checked  ~ nav div::before {
-        opacity: 0;
-        transform: rotate(90deg);
-        top: 0vh;
-      }
-      input:checked ~ div {
-        transform: rotate(405deg);
-      }
-      input:checked ~ div::after {
-        top: 0;
-        transform: rotate(90deg);
-      }
-      input:checked + .menu{
-        display: flex;
+      .hamburger--bar {
+        top: 2vh;
+        width: 100%;
+        height: 10%;
+        position: relative;
+        transition: all 0.4s ease;
+        background-color: black;
+
+        &:after {
+          top: 2vh;
+          width: 100%;
+          height: 100%;
+          content: "";
+          position: absolute;
+          transition: all 0.8s ease;
+          background-color: inherit;
+        }
+        &:before {
+          top: 4vh;
+          width: 100%;
+          height: 100%;
+          content: "";
+          position: absolute;
+          transition: all 0.4s ease;
+          background-color: inherit;
+        }
       }
     }
   }
 
-
-  .menu ul {
-    background-color: rgba(51, 48, 48, 0.712);
-    font-size: 1.5rem;
+  .logo {
+    width: 85%;
     height: 100%;
-    width: 100%;
-    display: FLEX;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-content: center;
-    list-style: none;
-    
-    
-    
-    li{
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; 
-      align-content: center;
-      text-align: center;
-    }
 
     a {
+      color: black;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      font-size: 1.5rem;
+      text-align: left;
+      font-weight: bold;
+      margin-left: 2%;
+      align-content: center;
+      justify-content: center;
       text-decoration: none;
-      color: white;
-      padding:2vh;
-      transition: all 0.1s ease;
     }
-    a:hover {
-      background-color:rgba(255, 255, 255, 0.685);
-      color:black;
+  }
+
+  .menu {
+    left: 100%;
+    order: 3;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    font-size: 1.5rem;
+    transition: all 0.1s ease;
+    text-align: center;
+    transition: all 0.4s ease;
+    line-height: 10vh;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(39, 39, 39, 0.822);
+
+    ul {
+      font-weight: bolder;
+      list-style-type: none;
+
+      li {
+        a {
+          color: white;
+          position: relative;
+          text-decoration: none;
+          &::before {
+            left: 0;
+            width: 100%;
+            bottom: 2vh;
+            height: 2px;
+            content: "";
+            position: absolute;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+            background-color: #fff;
+          }
+          &:hover:before {
+            transform: scaleX(1);
+          }
+        }
+      }
     }
+  }
+
+  .toggler {
+    left: 83%;
+    width: 10vh;
+    height: 10vh;
+    z-index: 2;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .toggler:checked ~ div div .menu {
+    left: 0;
+  }
+
+  .toggler:checked ~ div .hamburger .hamburger--bar {
+    top: 4vh;
+    transform: rotate(-135deg);
+  }
+
+  .toggler:checked ~ div .hamburger .hamburger--bar::after {
+    top: 0vh;
+    left: 0vh;
+    opacity: 0;
+    transform: rotate(-5deg);
+  }
+  .toggler:checked ~ div .hamburger .hamburger--bar::before {
+    top: 0vh;
+    left: 0vh;
+    transform: rotate(90deg);
   }
 }
 ////////////////////////////////////// HOME
@@ -169,14 +190,13 @@ header {
   align-content: center;
   padding-top: 5vh;
 
-
-  div  {
-    width:87%;
+  div {
+    width: 87%;
     max-width: 400px;
     padding: 5vh;
     text-align: center;
 
-    img{
+    img {
       width: 100%;
       padding-top: 2vh;
     }
@@ -191,18 +211,17 @@ header {
   align-content: center;
   padding-top: 5vh;
 
-
-  div  {
-    width:87%;
+  div {
+    width: 87%;
     max-width: 400px;
-    padding:5vh;
+    padding: 5vh;
     text-align: center;
 
-    ul{
+    ul {
       list-style: none;
     }
 
-    img{
+    img {
       width: 100%;
       padding-top: 2vh;
     }
@@ -218,46 +237,44 @@ header {
   margin-bottom: 5vh;
   padding-top: 5vh;
 
-  div  {
+  div {
     height: 80%;
-    width:87%;
+    width: 87%;
     max-width: 400px;
     text-align: center;
-
   }
 
   form {
-
-    width:87%;
+    width: 87%;
     max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-content:center;
+    align-content: center;
 
-    div{
+    div {
       width: 100%;
       height: 100%;
     }
 
-    input{
+    input {
       width: 90%;
       height: 3vh;
       border: none;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.26); 
-      font-family: 'Quicksand', sans-serif;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.26);
+      font-family: "Quicksand", sans-serif;
     }
-    input:focus{
-      outline:none;
+    input:focus {
+      outline: none;
     }
-    button{
+    button {
       font-size: 1.2rem;
       width: 90%;
       height: 5vh;
-      border-radius: .3vh;
-      font-family: 'Quicksand', sans-serif;
+      border-radius: 0.3vh;
+      font-family: "Quicksand", sans-serif;
       background-color: black;
-      color:white;
+      color: white;
       border: none;
       font-weight: 800;
     }
@@ -267,12 +284,12 @@ header {
 .section-divider {
   margin: 0px auto;
   width: 90%;
-  height: .2vh;
-  background-color:rgba(0, 0, 0, 0.281);
+  height: 0.2vh;
+  background-color: rgba(0, 0, 0, 0.281);
   border-radius: 25vh;
 }
 
-footer{
+footer {
   width: 100%;
   height: 20vh;
   color: white;
@@ -282,4 +299,139 @@ footer{
   justify-content: center;
   align-content: center;
   text-align: center;
+}
+
+@media only screen and (min-width: 568px) and (max-width: 767px) {
+  header {
+    div {
+      width: 5%;
+      height: 10vh;
+      margin-right: -10vw;
+    }
+    .toggler {
+      left: 90%;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    z-index: 5;
+    position: fixed;
+    flex-flow: row nowrap;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.39);
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.938);
+
+    .toggler {
+      display: none;
+    }
+    div {
+      width: 15%;
+      height: 10vh;
+
+      .hamburger {
+        display: none;
+      }
+    }
+
+    .logo {
+      width: 30%;
+      height: 100%;
+
+      a {
+        color: black;
+        display: flex;
+        font-size: 1.5rem;
+        padding-left: 2%;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
+        text-decoration: none;
+      }
+    }
+
+    .menu {
+      left: 30vw;
+      order: 2;
+      width: 70%;
+      height: 10vh;
+      position: absolute;
+      font-size: 1.5rem;
+      transition: all 0.1s ease;
+      text-align: center;
+      transition: all 0.4s ease;
+      line-height: 10vh;
+      background-color: rgba(255, 255, 255, 0);
+
+      ul {
+        display: flex;
+        overflow: hidden;
+        flex-flow: row nowrap;
+        font-weight: bolder;
+        padding-right: 2%;
+        justify-content: flex-end;
+        list-style-type: none;
+
+        li {
+          float: left;
+          padding-left: 2vw;
+          a {
+            color: black;
+            display: block;
+            position: relative;
+            text-decoration: none;
+            //psuedo elements below are for the underline animations
+            &::before {
+              left: 0;
+              width: 100%;
+              bottom: 2vh;
+              height: 2px;
+              content: "";
+              position: absolute;
+              transform: scaleX(0);
+              transition: all 0.3s ease-in-out;
+              background-color: rgb(0, 0, 0);
+            }
+            &:hover:before {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+    }
+
+    .toggler {
+      left: 83%;
+      width: 10vh;
+      height: 10vh;
+      z-index: 2;
+      opacity: 0;
+      position: absolute;
+    }
+
+    .toggler:checked ~ div div .menu {
+      left: 0;
+    }
+
+    .toggler:checked ~ div .hamburger .hamburger--bar {
+      top: 4vh;
+      transform: rotate(-135deg);
+    }
+
+    .toggler:checked ~ div .hamburger .hamburger--bar::after {
+      top: 0vh;
+      left: 0vh;
+      opacity: 0;
+      transform: rotate(-5deg);
+    }
+    .toggler:checked ~ div .hamburger .hamburger--bar::before {
+      top: 0vh;
+      left: 0vh;
+      transform: rotate(90deg);
+    }
+  }
 }
