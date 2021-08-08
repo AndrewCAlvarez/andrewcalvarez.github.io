@@ -207,7 +207,7 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 }
 
 .home-section {
-  padding-top: 25%;
+  padding-top: 10vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
