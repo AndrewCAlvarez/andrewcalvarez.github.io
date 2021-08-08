@@ -4,6 +4,7 @@
   padding: 1em;
   border-radius: 0.7vh;
   background-color: rgba(168, 166, 166, 0.74);
+  width: 40vw;
 }
 
 .button:focus {
@@ -14,7 +15,7 @@
 
 .button--state-success {
   color: white;
-  padding: 1em 1.5em;
+  padding: 1em;
   background-color: #52a752;
 }
 
@@ -376,6 +377,10 @@ header .toggler:checked ~ div .hamburger .hamburger--bar::before {
 
 .home .home--content .home--content-buttons .button--state-success {
   background-color: #52a752;
+}
+
+.home .home--content .home--content-buttons #contact--button {
+  margin-right: 5vw;
 }
 
 @keyframes focusAnimation {

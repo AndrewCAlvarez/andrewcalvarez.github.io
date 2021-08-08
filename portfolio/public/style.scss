@@ -6,6 +6,7 @@ $blue: rgba(11, 179, 221, 1);
   padding: 1em;
   border-radius: 0.7vh;
   background-color: rgba(168, 166, 166, 0.74);
+  width: 40vw;
 }
 
 .button:focus {
@@ -15,7 +16,7 @@ $blue: rgba(11, 179, 221, 1);
 
 .button--state-success {
   color: white;
-  padding: 1em 1.5em;
+  padding: 1em;
   background-color: rgb(82, 167, 82);
 }
 
@@ -272,6 +273,10 @@ header {
 
       .button--state-success {
         background-color: rgb(82, 167, 82);
+      }
+
+      #contact--button {
+        margin-right: 5vw;
       }
 
       @keyframes focusAnimation {
